@@ -10,9 +10,10 @@ The solution:
 
 This solution uses a framework that extracts details from the map of the database and generates the administration application. It is a semi-automated process where the database will be analysed manually using tools and experience to make sure the database complies to a standard object relationship layout. Once compliance is passed the generation process will start. There are three milestones to the solution.
 
-The analysis of the database
-The application generation
-The delivery
+1. The analysis of the database
+2. The application generation
+3. The delivery
+
 The predicted results:
 
 The results will be all the code and files necessary to further develop and run the application on your servers. The solution will deliver everything within days! Whereas, such a project can take months requiring an expert or experts to work more than 30 hours per week at an expensive rate. This benefits the organization because the quality of code is not lowered while programmers can concentrate on new features that benefit their customers.
