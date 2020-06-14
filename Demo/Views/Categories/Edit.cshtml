@@ -1,0 +1,207 @@
+﻿
+
+@model BusinessModelLayer.Categories.CategoriesMasterDetailModel
+@{
+	ViewBag.Title = "Edit";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- ============================================================== -->
+<!-- pageheader -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">Edit</h2>
+            <p class="pageheader-text">.</p>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CRUD Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">categories</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+	<strong>API call:</strong>  <a href="~/api/Categories/?CategoryID=@Model.Categories.CategoryID" role="link"> api/Categories/?CategoryID=@Model.Categories.CategoryID &raquo;</a>
+<br />
+	
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="section-block" id="basicform">
+            <h3 class="section-title">Main Table Section</h3>
+            <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
+        </div>
+        <div class="card">
+            <h5 class="card-header">CATEGORIES</h5>
+            <div class="card-body">
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="row">
+			<div class="col">
+		<div class="form-group">
+				@Html.LabelFor(model => model.Categories.CategoryID, htmlAttributes: new { @class = "col-form-label" })
+				
+							@Html.EditorFor(model => model.Categories.CategoryID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+							@Html.HiddenFor(model => model.Categories.CategoryID, new { htmlAttributes = new { @class = "form-control" } })							
+											@Html.ValidationMessageFor(model => model.Categories.CategoryID, "", new { @class = "text-danger" })
+				
+		 </div>
+		<div class="form-group">
+				@Html.LabelFor(model => model.Categories.CategoryName, htmlAttributes: new { @class = "col-form-label" })
+				
+										@Html.EditorFor(model => model.Categories.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+														@Html.ValidationMessageFor(model => model.Categories.CategoryName, "", new { @class = "text-danger" })
+				
+		 </div>
+		<div class="form-group">
+				@Html.LabelFor(model => model.Categories.Description, htmlAttributes: new { @class = "col-form-label" })
+				
+										@Html.EditorFor(model => model.Categories.Description, new { htmlAttributes = new { @class = "form-control" } })
+														@Html.ValidationMessageFor(model => model.Categories.Description, "", new { @class = "text-danger" })
+				
+		 </div>
+		<div class="form-group">
+				@Html.LabelFor(model => model.Categories.Picture, htmlAttributes: new { @class = "col-form-label" })
+				
+            @*@Html.EditorFor(model => model.Categories.Picture, new { htmlAttributes = new { @class = "form-control" } })*@
+			<input type="file" name="ImageDataPicture" id="ImageDataPicture" onchange="" class = "form-control" />
+            @Html.HiddenFor(model => model.Categories.Picture)
+			<img src="data:image/png;base64,@Convert.ToBase64String(Model.Categories.Picture,78, Model.Categories.Picture.Length -78)" />				   
+								@Html.ValidationMessageFor(model => model.Categories.Picture, "", new { @class = "text-danger" })
+				
+		 </div>
+			</div>
+
+		</div>
+		<div class="form-group">
+            <div class="row">
+				<div class="col-md-auto">
+					<input type="submit" value="Save" class="btn btn-primary" />
+				</div>
+				<div class="col-md-auto">
+					@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+				</div>
+			</div>
+		</div>
+}
+
+</div>
+<div class="card-body border-top">
+
+    <h2>Transaction Table Section</h2>
+    <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CATEGORIES</a></li>
+                <li class="breadcrumb-item active" aria-current="page">PRODUCTS</li>
+            </ol>
+        </nav>
+    </div>
+    <br />
+		@using (Html.BeginForm("Edit", "Categories", FormMethod.Get))
+		{
+			<div class="row">
+				<div class="col-sm-3">
+					<label>Find by ProductName:</label>
+				</div>
+			</div>
+
+			<div class="input-group mb-3">
+				@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <div class="input-group-append">
+					<input type="submit" class="btn btn-primary" value="Data Search" />
+				</div>
+			</div>
+
+
+			@Html.Hidden("CategoryID", (int)ViewBag.CategoryID)
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+        <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                <thead>
+					<tr>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Productid)*@
+							@Html.ActionLink("Productid", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.ProductidSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Productname)*@
+							@Html.ActionLink("Productname", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.ProductnameSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Supplierid)*@
+							@Html.ActionLink("Supplierid", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.SupplieridSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Categoryid)*@
+							@Html.ActionLink("Categoryid", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.CategoryidSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Quantityperunit)*@
+							@Html.ActionLink("Quantityperunit", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.QuantityperunitSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Unitprice)*@
+							@Html.ActionLink("Unitprice", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.UnitpriceSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Unitsinstock)*@
+							@Html.ActionLink("Unitsinstock", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.UnitsinstockSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Unitsonorder)*@
+							@Html.ActionLink("Unitsonorder", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.UnitsonorderSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Reorderlevel)*@
+							@Html.ActionLink("Reorderlevel", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.ReorderlevelSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th>
+							@*@Html.DisplayNameFor(model => model.Products.Discontinued)*@
+							@Html.ActionLink("Discontinued", "Edit", new { ViewBag.PgeSize, ViewBag.CategoryID, sortOrder = ViewBag.DiscontinuedSortParm, currentFilter = ViewBag.CurrentFilter })
+						</th>
+											<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				@Html.Partial("_CategoriesProductsEditDetlMaster", Model.ProductsVwDetl)
+
+			</table>
+        
+
+    </div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+    </div>
+		}
+</div>
+</div>
+</div>
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+
+	}

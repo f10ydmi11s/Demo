@@ -1,0 +1,76 @@
+﻿@model BusinessModelLayer.TerritoriesSingle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- ============================================================== -->
+<!-- pageheader -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">Details</h2>
+            <p class="pageheader-text">.</p>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CRUD Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">territories</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+
+		<strong>API call:</strong>  <a href="~/api/Territories/?TerritoryID=@Model.TerritoryID" role="link"> api/Territories/?TerritoryID=@Model.TerritoryID &raquo;</a>
+	
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="section-block" id="basicform">
+        <h3 class="section-title">Main Table Section</h3>
+        <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
+    </div>
+    <div class="card">
+        <h5 class="card-header">territories</h5>
+        <div class="card-body">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TerritoryID)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.TerritoryID)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TerritoryDescription)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.TerritoryDescription)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionID)
+        </dt>
+
+        <dd>
+								@Html.DropDownListFor(model => model.RegionID,
+							new SelectList(ViewBag.Regions, "Value", "Text"),
+							new { disabled = "disabled" })	
+				        </dd>
+    </dl>
+
+
+
+	@Html.ActionLink("Edit", "Edit", new { TerritoryID = Model.TerritoryID, RegionID = Model.RegionID }, new { @class = "btn btn-primary" })
+	
+
+	@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+        </div>
+    </div>
+</div>
+

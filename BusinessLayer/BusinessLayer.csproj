@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{977CB8DB-0D48-43DA-A08C-CC2E2CE427E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.10.0.30320\lib\net40\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.11.0.50728\lib\net45\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Demo\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExceptionLogging.cs" />
+    <Compile Include="Models\CategoriesLayerModel.cs" />
+    <Compile Include="Models\CategoriesModel.cs" />
+    <Compile Include="Models\CategoriesSingleModel.cs" />
+    <Compile Include="Models\CustomerCustomerDemoLayerModel.cs" />
+    <Compile Include="Models\CustomerCustomerDemoModel.cs" />
+    <Compile Include="Models\CustomerCustomerDemoSingleModel.cs" />
+    <Compile Include="Models\CustomerDemographicsLayerModel.cs" />
+    <Compile Include="Models\CustomerDemographicsModel.cs" />
+    <Compile Include="Models\CustomerDemographicsSingleModel.cs" />
+    <Compile Include="Models\CustomersLayerModel.cs" />
+    <Compile Include="Models\CustomersModel.cs" />
+    <Compile Include="Models\CustomersSingleModel.cs" />
+    <Compile Include="Models\EmployeesLayerModel.cs" />
+    <Compile Include="Models\EmployeesModel.cs" />
+    <Compile Include="Models\EmployeesSingleModel.cs" />
+    <Compile Include="Models\EmployeeTerritoriesLayerModel.cs" />
+    <Compile Include="Models\EmployeeTerritoriesModel.cs" />
+    <Compile Include="Models\EmployeeTerritoriesSingleModel.cs" />
+    <Compile Include="Models\Order DetailsLayerModel.cs" />
+    <Compile Include="Models\Order DetailsModel.cs" />
+    <Compile Include="Models\Order DetailsSingleModel.cs" />
+    <Compile Include="Models\OrdersLayerModel.cs" />
+    <Compile Include="Models\OrdersModel.cs" />
+    <Compile Include="Models\OrdersSingleModel.cs" />
+    <Compile Include="Models\ProductsLayerModel.cs" />
+    <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\ProductsSingleModel.cs" />
+    <Compile Include="Models\RegionLayerModel.cs" />
+    <Compile Include="Models\RegionModel.cs" />
+    <Compile Include="Models\RegionSingleModel.cs" />
+    <Compile Include="Models\ShippersLayerModel.cs" />
+    <Compile Include="Models\ShippersModel.cs" />
+    <Compile Include="Models\ShippersSingleModel.cs" />
+    <Compile Include="Models\SuppliersLayerModel.cs" />
+    <Compile Include="Models\SuppliersModel.cs" />
+    <Compile Include="Models\SuppliersSingleModel.cs" />
+    <Compile Include="Models\tbl_ExceptionLoggingToDataBaseLayerModel.cs" />
+    <Compile Include="Models\tbl_ExceptionLoggingToDataBaseModel.cs" />
+    <Compile Include="Models\tbl_ExceptionLoggingToDataBaseSingleModel.cs" />
+    <Compile Include="Models\tbl_LoginLayerModel.cs" />
+    <Compile Include="Models\tbl_LoginModel.cs" />
+    <Compile Include="Models\tbl_LoginSingleModel.cs" />
+    <Compile Include="Models\TerritoriesLayerModel.cs" />
+    <Compile Include="Models\TerritoriesModel.cs" />
+    <Compile Include="Models\TerritoriesSingleModel.cs" />
+    <Compile Include="Models\vwCategoriesVwModel.cs" />
+    <Compile Include="Models\vwCustomercustomerdemoVwModel.cs" />
+    <Compile Include="Models\vwCustomerdemographicsVwModel.cs" />
+    <Compile Include="Models\vwCustomersVwModel.cs" />
+    <Compile Include="Models\vwEmployeesVwModel.cs" />
+    <Compile Include="Models\vwEmployeeterritoriesVwModel.cs" />
+    <Compile Include="Models\vwOrdersVwModel.cs" />
+    <Compile Include="Models\vwOrder_DetailsVwModel.cs" />
+    <Compile Include="Models\vwProductsVwModel.cs" />
+    <Compile Include="Models\vwRegionVwModel.cs" />
+    <Compile Include="Models\vwShippersVwModel.cs" />
+    <Compile Include="Models\vwSuppliersVwModel.cs" />
+    <Compile Include="Models\vwTbl_ExceptionloggingtodatabaseVwModel.cs" />
+    <Compile Include="Models\vwTbl_LoginVwModel.cs" />
+    <Compile Include="Models\vwTerritoriesVwModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Validation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\PagedList.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

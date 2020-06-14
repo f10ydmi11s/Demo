@@ -1,0 +1,75 @@
+﻿@model PagedList.IPagedList<BusinessModelLayer.Vwemployees>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<!-- ============================================================== -->
+<!-- pageheader -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">LIST</h2>
+            <p class="pageheader-text">.</p>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CRUD Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">employees</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<strong>API call:</strong>  <a href="~/api/Employees" role="link"> api/Employees &raquo;</a>
+<br /><br />
+
+<div class="row">
+    <div class="col-sm-3">
+<p>@Html.ActionLink("Create New", "Create",null, new { area = "" }, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>
+@using (Html.BeginForm("List", "Employees", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col">
+            <br />
+            <label>Find by LastName:</label>
+            <br />
+        </div>
+    </div>
+
+	<div class="input-group mb-3">
+		@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+		<div class="input-group-append">
+			<input type="submit" class="btn btn-primary" value="Data Search" />
+		</div>
+	</div>
+
+    @Html.Partial("_VwEmployeesList", Model)
+
+    <div class="row align-items-center">
+        <div class="col-md-auto">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        </div>
+        <div class="col-md-auto">
+
+            @Html.PagedListPager(Model, page => Url.Action("List",
+                new { ViewBag.PgeSize, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        </div>
+        <div class="col-md-auto">Page Size</div>
+        <div class="col-md-auto">
+            @Html.DropDownList("PgeSize", (IEnumerable<SelectListItem>)ViewBag.PgeSizeList, new { id = "ddpgesize", @class = "form-control btn-group-vertical" })
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

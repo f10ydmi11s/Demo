@@ -1,0 +1,134 @@
+﻿@model BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- ============================================================== -->
+<!-- pageheader -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">Edit</h2>
+            <p class="pageheader-text">.</p>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CRUD Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">tbl_exceptionloggingtodatabase</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+
+		<strong>API call:</strong>  <a href="~/api/Tbl_Exceptionloggingtodatabase/?Logid=@Model.Logid" role="link"> api/Tbl_Exceptionloggingtodatabase/?Logid=@Model.Logid &raquo;</a>
+	
+<br />
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="section-block" id="basicform">
+        <h3 class="section-title">Main Table Section</h3>
+        <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
+    </div>
+    <div class="card">
+        <h5 class="card-header">TBL_EXCEPTIONLOGGINGTODATABASE</h5>
+        <div class="card-body">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Logid, htmlAttributes: new { @class = "col-form-label" })
+            
+                @Html.EditorFor(model => model.Logid, new { htmlAttributes = new { @class = "form-control" } })
+			
+                @Html.ValidationMessageFor(model => model.Logid, "", new { @class = "text-danger" })
+            
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExceptionMsg, htmlAttributes: new { @class = "col-form-label" })
+            
+                @Html.EditorFor(model => model.ExceptionMsg, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+			
+                @Html.ValidationMessageFor(model => model.ExceptionMsg, "", new { @class = "text-danger" })
+            
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExceptionType, htmlAttributes: new { @class = "col-form-label" })
+            
+                @Html.EditorFor(model => model.ExceptionType, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+			
+                @Html.ValidationMessageFor(model => model.ExceptionType, "", new { @class = "text-danger" })
+            
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExceptionSource, htmlAttributes: new { @class = "col-form-label" })
+            
+                @Html.EditorFor(model => model.ExceptionSource, new { htmlAttributes = new { @class = "form-control" } })
+			
+                @Html.ValidationMessageFor(model => model.ExceptionSource, "", new { @class = "text-danger" })
+            
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExceptionURL, htmlAttributes: new { @class = "col-form-label" })
+            
+                @Html.EditorFor(model => model.ExceptionURL, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+			
+                @Html.ValidationMessageFor(model => model.ExceptionURL, "", new { @class = "text-danger" })
+            
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Logdate, htmlAttributes: new { @class = "col-form-label" })
+            
+			@Html.EditorFor(model => model.Logdate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
+			
+                @Html.ValidationMessageFor(model => model.Logdate, "", new { @class = "text-danger" })
+            
+        </div>
+        <div class="form-group">
+            <div class="row">
+				<div class="col-md-auto">
+					<input type="submit" value="Save" class="btn btn-primary" />
+				</div>
+				<div class="col-md-auto">
+					@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+				</div>
+            </div>
+        </div>
+
+}
+    </div>
+</div>
+</div>
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+@section scripts{
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                //dateFormat: "mm/dd/yyyy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-10:+10",
+                //minDate: new Date(2005, 0, 1),
+                //maxDate: new Date(2025, 0, 1),
+                showOn: "both",
+                //buttonText: "Select"
+                buttonText : "<i class='fa fa-calendar'></i>"
+            });
+        });
+    </script>
+}
+

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BusinessModelLayer.Vwcategories>
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+        </div>
+        <div class="card-body">
+
+
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.CategoryID)*@
+                        @Html.ActionLink("CategoryID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CategoryIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.CategoryName)*@
+                        @Html.ActionLink("CategoryName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CategoryNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Description)*@
+                        @Html.ActionLink("Description", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.DescriptionSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Picture)*@
+                        @Html.ActionLink("Picture", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PictureSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.Picture)*@
+							<img src="data:image/png;base64,@Convert.ToBase64String(item.Picture,78, item.Picture.Length -78)" />
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { CategoryID = item.CategoryID })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { CategoryID = item.CategoryID })
+                        </td>
+                        <td>
+							@Html.ActionLink("Delete", "Delete", new { CategoryID = item.CategoryID }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+
+

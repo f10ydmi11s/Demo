@@ -1,0 +1,97 @@
+﻿@model IEnumerable<BusinessModelLayer.Vwtbl_exceptionloggingtodatabase>
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+        </div>
+        <div class="card-body">
+
+
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Logid)*@
+                        @Html.ActionLink("Logid", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.LogidSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ExceptionMsg)*@
+                        @Html.ActionLink("ExceptionMsg", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ExceptionMsgSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ExceptionType)*@
+                        @Html.ActionLink("ExceptionType", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ExceptionTypeSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ExceptionSource)*@
+                        @Html.ActionLink("ExceptionSource", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ExceptionSourceSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ExceptionURL)*@
+                        @Html.ActionLink("ExceptionURL", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ExceptionURLSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Logdate)*@
+                        @Html.ActionLink("Logdate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.LogdateSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Logid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExceptionMsg)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExceptionType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExceptionSource)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExceptionURL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Logdate)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { Logid = item.Logid })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { Logid = item.Logid })
+                        </td>
+                        <td>
+							@Html.ActionLink("Delete", "Delete", new { Logid = item.Logid }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+
+

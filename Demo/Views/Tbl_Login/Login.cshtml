@@ -1,0 +1,55 @@
+﻿@model BusinessModelLayer.Tbl_LoginSingle
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin2.cshtml";
+}
+
+@using (Html.BeginForm("Verify", "Tbl_Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="card ">
+        <div class="card-header text-center"><a href='@Url.Action("Index","Home")'><h2 class="pageheader-title">Northwind</h2></a><span class="splash-description">Please enter your user information.</span></div>
+        <div class="card-body">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control form-control-lg", placeholder = "user" } }) <br /> Login with Username "admin" or "user"
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+            </div>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control form-control-lg", placeholder = "password" } }) <br /> Login with Password "password"
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            </div>
+
+
+            <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+
+        </div>
+        <div class="card-footer bg-white p-0  ">
+            <div class="card-footer-item card-footer-item-bordered">
+                <a href="#" class="footer-link">Create An Account</a>
+            </div>
+            <div class="card-footer-item card-footer-item-bordered">
+                <a href="#" class="footer-link">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+}
+

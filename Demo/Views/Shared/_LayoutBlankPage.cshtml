@@ -1,0 +1,581 @@
+﻿@using Demo.CustomHelpers;
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="~/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/libs/css/style.css">
+    <link rel="stylesheet" href="~/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href='@Url.Action("Index","Home")'>Speed-Stack</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-table"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Tables</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+	                                            <a href='@Url.Action("List","ClientMaster")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Clientmaster</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","Department")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Department</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","Employee")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Employee</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","RefreshToken")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Refreshtoken</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+					@if (User.Identity.IsAuthenticated)
+				{
+
+					if (User.IsInRole("Admin"))
+					{
+                                            <a href='@Url.Action("List","tbl_Login")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tbl_Login</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+					}
+				}
+	                                            <a href='@Url.Action("List","tblActivities")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblactivities</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblActivitiesRpt")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblactivitiesrpt</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblAlternativeWords")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblalternativewords</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblCitation")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblcitation</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblContext")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblcontext</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblExample")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblexample</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblExampleArchive")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblexamplearchive</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblExampleInfo")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblexampleinfo</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblFallacy")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblfallacy</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblGrepWordsAlt")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblgrepwordsalt</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblGrepWordsAltTemp")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblgrepwordsalttemp</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblIncludes")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblincludes</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblIncludesDetl")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblincludesdetl</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblIntro")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblintro</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblLevels")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tbllevels</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblLikely")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tbllikely</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblLikelyArchive")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tbllikelyarchive</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblNouns")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblnouns</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblQuestion")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblquestion</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblQuestionPool")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblquestionpool</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblResponse")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblresponse</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblResponsePool")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblresponsepool</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblSample")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblsample</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblSynonyms")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblsynonyms</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblSynonymsDesc")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblsynonymsdesc</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","tblWorldview")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Tblworldview</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","UserActivation")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Useractivation</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","UserMaster")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Usermaster</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                            <a href='@Url.Action("List","Users")' class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="../assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Users</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+	                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">To view all scroll down</a></div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+					@if (User.Identity.IsAuthenticated)
+				{
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">
+                                        @User.Identity.Name
+                                    </h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+				}
+				else
+				{
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">
+                                        @User.Identity.Name
+                                    </h5>
+                                    <span class="status"></span><span class="ml-2">Unavailable</span>
+                                </div>
+				}
+	
+
+
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+					@if (User.Identity.IsAuthenticated)
+				{
+                                <a class="dropdown-item" href='@Url.Action("Logout", "Tbl_Login")'><i class="fas fa-power-off mr-2"></i>Logout</a>
+				}
+				else
+				{
+                                <a class="dropdown-item" href='@Url.Action("Login", "Tbl_Login")'><i class="fas fa-power-off mr-2"></i>Login</a>
+				}
+	
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Information <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><strong>Info!</strong> Deletes, Updates, Adds are enabled.</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fas fa-fw fa-table"></i>CRUD Tables</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("ClientMaster", "List", "Clientmaster", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Clientmaster", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("Department", "List", "Department", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Department", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("Employee", "List", "Employee", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Employee", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("RefreshToken", "List", "Refreshtoken", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Refreshtoken", "List") })
+				                        </li>
+	                        				                        @if (User.Identity.IsAuthenticated)
+				                        {
+
+					                        if (User.IsInRole("Admin"))
+					                        {
+					                        <li class="nav-item">
+						                        @Html.ActionLink("tbl_Login", "List", "Tbl_Login", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tbl_Login", "List") })
+					                        </li>
+					                        }
+				                        }
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblActivities", "List", "Tblactivities", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblactivities", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblActivitiesRpt", "List", "Tblactivitiesrpt", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblactivitiesrpt", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblAlternativeWords", "List", "Tblalternativewords", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblalternativewords", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblCitation", "List", "Tblcitation", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblcitation", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblContext", "List", "Tblcontext", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblcontext", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblExample", "List", "Tblexample", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblexample", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblExampleArchive", "List", "Tblexamplearchive", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblexamplearchive", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblExampleInfo", "List", "Tblexampleinfo", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblexampleinfo", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblFallacy", "List", "Tblfallacy", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblfallacy", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblGrepWordsAlt", "List", "Tblgrepwordsalt", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblgrepwordsalt", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblGrepWordsAltTemp", "List", "Tblgrepwordsalttemp", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblgrepwordsalttemp", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblIncludes", "List", "Tblincludes", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblincludes", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblIncludesDetl", "List", "Tblincludesdetl", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblincludesdetl", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblIntro", "List", "Tblintro", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblintro", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblLevels", "List", "Tbllevels", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tbllevels", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblLikely", "List", "Tbllikely", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tbllikely", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblLikelyArchive", "List", "Tbllikelyarchive", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tbllikelyarchive", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblNouns", "List", "Tblnouns", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblnouns", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblQuestion", "List", "Tblquestion", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblquestion", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblQuestionPool", "List", "Tblquestionpool", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblquestionpool", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblResponse", "List", "Tblresponse", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblresponse", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblResponsePool", "List", "Tblresponsepool", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblresponsepool", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblSample", "List", "Tblsample", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblsample", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblSynonyms", "List", "Tblsynonyms", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblsynonyms", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblSynonymsDesc", "List", "Tblsynonymsdesc", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblsynonymsdesc", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("tblWorldview", "List", "Tblworldview", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Tblworldview", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("UserActivation", "List", "Useractivation", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Useractivation", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("UserMaster", "List", "Usermaster", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Usermaster", "List") })
+				                        </li>
+	                        				                        <li class="nav-item">
+					                        @Html.ActionLink("Users", "List", "Users", new { area = "" }, new { @class = "nav-link " + @Html.IsActive("Users", "List") })
+				                        </li>
+	                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+					@if (User.Identity.IsAuthenticated)
+				{
+                                <a class="nav-link" href='@Url.Action("Logout", "Tbl_Login")'><i class="fas fa-power-off mr-2"></i>Logout</a>
+				}
+				else
+				{
+                                <a class="nav-link" href='@Url.Action("Login", "Tbl_Login")'><i class="fas fa-power-off mr-2"></i>Login</a>
+				}
+	                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h3 class="text-center">Content goes here!</h3>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                           Copyright © @DateTime.Now.Year. All rights reserved. Functionality by Floyd Mills.  Template by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="~/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="~/assets/libs/js/main-js.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+ 
+</html>

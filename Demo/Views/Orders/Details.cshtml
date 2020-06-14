@@ -1,0 +1,157 @@
+﻿@model BusinessModelLayer.OrdersSingle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- ============================================================== -->
+<!-- pageheader -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">Details</h2>
+            <p class="pageheader-text">.</p>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CRUD Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">orders</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end pageheader  -->
+<!-- ============================================================== -->
+
+		<strong>API call:</strong>  <a href="~/api/Orders/?OrderID=@Model.OrderID" role="link"> api/Orders/?OrderID=@Model.OrderID &raquo;</a>
+	
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="section-block" id="basicform">
+        <h3 class="section-title">Main Table Section</h3>
+        <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
+    </div>
+    <div class="card">
+        <h5 class="card-header">orders</h5>
+        <div class="card-body">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.OrderID)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+
+        <dd>
+								@Html.DropDownListFor(model => model.CustomerID,
+							new SelectList(ViewBag.Customerss, "Value", "Text"),
+							new { disabled = "disabled" })	
+				        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+
+        <dd>
+								@Html.DropDownListFor(model => model.EmployeeID,
+							new SelectList(ViewBag.Employeess, "Value", "Text"),
+							new { disabled = "disabled" })	
+				        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.OrderDate)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredDate)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.RequiredDate)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippedDate)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShippedDate)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipVia)
+        </dt>
+
+        <dd>
+								@Html.DropDownListFor(model => model.ShipVia,
+							new SelectList(ViewBag.Shipperss, "Value", "Text"),
+							new { disabled = "disabled" })	
+				        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Freight)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.Freight)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShipName)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipAddress)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShipAddress)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipCity)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShipCity)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipRegion)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShipRegion)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipPostalCode)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShipPostalCode)
+		        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipCountry)
+        </dt>
+
+        <dd>
+		            @Html.DisplayFor(model => model.ShipCountry)
+		        </dd>
+    </dl>
+
+
+
+	@Html.ActionLink("Edit", "Edit", new { OrderID = Model.OrderID, ShipperID = Model.ShipVia }, new { @class = "btn btn-primary" })
+	
+
+	@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+        </div>
+    </div>
+</div>
+

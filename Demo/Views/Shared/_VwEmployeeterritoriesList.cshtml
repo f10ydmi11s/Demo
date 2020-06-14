@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BusinessModelLayer.Vwemployeeterritories>
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+        </div>
+        <div class="card-body">
+
+
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.EmployeeID)*@
+                        @Html.ActionLink("EmployeeID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.EmployeeIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.TerritoryID)*@
+                        @Html.ActionLink("TerritoryID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.TerritoryIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TerritoryID)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { EmployeeID = item.EmployeeID, TerritoryID = item.TerritoryID })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { EmployeeID = item.EmployeeID, TerritoryID = item.TerritoryID })
+                        </td>
+                        <td>
+							@Html.ActionLink("Delete", "Delete", new { EmployeeID = item.EmployeeID, TerritoryID = item.TerritoryID }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+
+

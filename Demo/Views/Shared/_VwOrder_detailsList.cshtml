@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BusinessModelLayer.Vworder_details>
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+        </div>
+        <div class="card-body">
+
+
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.OrderID)*@
+                        @Html.ActionLink("OrderID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.OrderIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ProductID)*@
+                        @Html.ActionLink("ProductID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ProductIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.UnitPrice)*@
+                        @Html.ActionLink("UnitPrice", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitPriceSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Quantity)*@
+                        @Html.ActionLink("Quantity", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.QuantitySortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Discount)*@
+                        @Html.ActionLink("Discount", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.DiscountSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Discount)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { OrderID = item.OrderID, ProductID = item.ProductID })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { OrderID = item.OrderID, ProductID = item.ProductID })
+                        </td>
+                        <td>
+							@Html.ActionLink("Delete", "Delete", new { OrderID = item.OrderID, ProductID = item.ProductID }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+
+

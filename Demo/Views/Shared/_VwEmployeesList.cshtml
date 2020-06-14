@@ -1,0 +1,182 @@
+﻿@model IEnumerable<BusinessModelLayer.Vwemployees>
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+        </div>
+        <div class="card-body">
+
+
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.EmployeeID)*@
+                        @Html.ActionLink("EmployeeID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.EmployeeIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.LastName)*@
+                        @Html.ActionLink("LastName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.LastNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.FirstName)*@
+                        @Html.ActionLink("FirstName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.FirstNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Title)*@
+                        @Html.ActionLink("Title", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.TitleSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.TitleOfCourtesy)*@
+                        @Html.ActionLink("TitleOfCourtesy", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.TitleOfCourtesySortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.BirthDate)*@
+                        @Html.ActionLink("BirthDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.BirthDateSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.HireDate)*@
+                        @Html.ActionLink("HireDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.HireDateSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Address)*@
+                        @Html.ActionLink("Address", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.AddressSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.City)*@
+                        @Html.ActionLink("City", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CitySortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Region)*@
+                        @Html.ActionLink("Region", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.PostalCode)*@
+                        @Html.ActionLink("PostalCode", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PostalCodeSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Country)*@
+                        @Html.ActionLink("Country", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CountrySortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.HomePhone)*@
+                        @Html.ActionLink("HomePhone", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.HomePhoneSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Extension)*@
+                        @Html.ActionLink("Extension", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ExtensionSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Photo)*@
+                        @Html.ActionLink("Photo", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PhotoSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Notes)*@
+                        @Html.ActionLink("Notes", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.NotesSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ReportsTo)*@
+                        @Html.ActionLink("ReportsTo", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ReportsToSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.PhotoPath)*@
+                        @Html.ActionLink("PhotoPath", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PhotoPathSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TitleOfCourtesy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BirthDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HireDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Region)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostalCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HomePhone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Extension)
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.Photo)*@
+							<img src="data:image/png;base64,@Convert.ToBase64String(item.Photo,78, item.Photo.Length -78)" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Notes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReportsTo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhotoPath)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { EmployeeID = item.EmployeeID })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { EmployeeID = item.EmployeeID })
+                        </td>
+                        <td>
+							@Html.ActionLink("Delete", "Delete", new { EmployeeID = item.EmployeeID }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+
+

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BusinessModelLayer.Vwshippers>
+
+<!-- ============================================================== -->
+<!-- data table  -->
+<!-- ============================================================== -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+        </div>
+        <div class="card-body">
+
+
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered second" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.ShipperID)*@
+                        @Html.ActionLink("ShipperID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipperIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.CompanyName)*@
+                        @Html.ActionLink("CompanyName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CompanyNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Phone)*@
+                        @Html.ActionLink("Phone", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PhoneSortParm, currentFilter = ViewBag.CurrentFilter })
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShipperID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { ShipperID = item.ShipperID })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { ShipperID = item.ShipperID })
+                        </td>
+                        <td>
+							@Html.ActionLink("Delete", "Delete", new { ShipperID = item.ShipperID }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- end data table  -->
+<!-- ============================================================== -->
+
+
+

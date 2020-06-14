@@ -1,0 +1,50 @@
+﻿@model PagedList.IPagedList<BusinessModelLayer.Vwemployeeterritories>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<tbody>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.EmployeeID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TerritoryID)
+			</td>
+			<td>
+				@*@Html.ActionLink("Edit", "Edit", "Employeeterritories", new { TerritoryID = item.TerritoryID }, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.ActionLink("Edit", "Edit", "Employeeterritories", new { TerritoryID = item.TerritoryID, EmployeeID = item.EmployeeID }, new { htmlAttributes = new { @class = "form-control" } })
+			</td>
+			<td>
+				@*@Html.ActionLink("Details", "Details", "Employeeterritories", new { TerritoryID = item.TerritoryID }, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.ActionLink("Details", "Details", "Employeeterritories", new { TerritoryID = item.TerritoryID, EmployeeID = item.EmployeeID }, new { htmlAttributes = new { @class = "form-control" } })
+			</td>
+			<td>
+				@*@Html.ActionLink("Delete", "Delete", "Employeeterritories", new { TerritoryID = item.TerritoryID }, new { @class = "btn btn-danger btn-sm" })*@
+				@Html.ActionLink("Delete", "Delete", "Employeeterritories", new { TerritoryID = item.TerritoryID, EmployeeID = item.EmployeeID }, new { @class = "btn btn-danger btn-sm" })
+			</td>
+		</tr>
+	}
+</tbody>
+<tfoot>
+	<tr>
+		<th colspan="5">
+			<div class="row align-items-center">
+				<div class="col-md-auto">
+					Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+				</div>
+				<div class="col-md-auto">
+					@Html.PagedListPager(Model, page => Url.Action("Edit",
+						new { ViewBag.PgeSize, ViewBag.EmployeeID, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+				</div>
+				<div class="col-md-auto">Page Size</div>
+				<div class="col-md-auto">
+					@Html.DropDownList("PgeSize", (IEnumerable<SelectListItem>)ViewBag.PgeSizeList, new { id = "ddpgesize", @class = "form-control btn-group-vertical" })
+				</div>
+			</div>
+		</th>
+	</tr>
+</tfoot>
+		
+
