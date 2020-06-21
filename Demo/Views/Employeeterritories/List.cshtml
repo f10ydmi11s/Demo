@@ -28,11 +28,12 @@
 </div>
 
 <strong>API call:</strong>  <a href="~/api/Employeeterritories" role="link"> api/Employeeterritories &raquo;</a>
-<br /><br />
+<br />
+<br />
 
 <div class="row">
     <div class="col-sm-3">
-<p>@Html.ActionLink("Create New", "Create",null, new { area = "" }, new { @class = "btn btn-primary" })</p>
+        <p>@Html.ActionLink("Create New", "Create", null, new { area = "" }, new { @class = "btn btn-primary" })</p>
     </div>
 </div>
 @using (Html.BeginForm("List", "Employeeterritories", FormMethod.Get))
@@ -45,12 +46,12 @@
         </div>
     </div>
 
-	<div class="input-group mb-3">
-		@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
-		<div class="input-group-append">
-			<input type="submit" class="btn btn-primary" value="Data Search" />
-		</div>
-	</div>
+    <div class="input-group mb-3">
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+        <div class="input-group-append">
+            <input type="submit" class="btn btn-primary" value="Data Search" />
+        </div>
+    </div>
 
     @Html.Partial("_VwEmployeeterritoriesList", Model)
 

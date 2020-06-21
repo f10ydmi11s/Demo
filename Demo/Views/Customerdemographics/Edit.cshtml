@@ -2,8 +2,8 @@
 
 @model BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel
 @{
-	ViewBag.Title = "Edit";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!-- ============================================================== -->
 <!-- pageheader -->
@@ -27,131 +27,131 @@
 <!-- ============================================================== -->
 <!-- end pageheader  -->
 <!-- ============================================================== -->
-	<strong>API call:</strong>  <a href="~/api/Customerdemographics/?CustomerTypeID=@Model.Customerdemographics.CustomerTypeID" role="link"> api/Customerdemographics/?CustomerTypeID=@Model.Customerdemographics.CustomerTypeID &raquo;</a>
+<strong>API call:</strong>  <a href="~/api/Customerdemographics/?CustomerTypeID=@Model.Customerdemographics.CustomerTypeID" role="link"> api/Customerdemographics/?CustomerTypeID=@Model.Customerdemographics.CustomerTypeID &raquo;</a>
 <br />
-	
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="section-block" id="basicform">
-            <h3 class="section-title">Main Table Section</h3>
-            <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
-        </div>
-        <div class="card">
-            <h5 class="card-header">CUSTOMERDEMOGRAPHICS</h5>
-            <div class="card-body">
-@using (Html.BeginForm())
-{
-	@Html.AntiForgeryToken()
 
-
-		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-		<div class="row">
-			<div class="col">
-		<div class="form-group">
-				@Html.LabelFor(model => model.Customerdemographics.CustomerTypeID, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Customerdemographics.CustomerTypeID, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Customerdemographics.CustomerTypeID, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Customerdemographics.CustomerDesc, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Customerdemographics.CustomerDesc, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Customerdemographics.CustomerDesc, "", new { @class = "text-danger" })
-				
-		 </div>
-			</div>
-
-		</div>
-		<div class="form-group">
-            <div class="row">
-				<div class="col-md-auto">
-					<input type="submit" value="Save" class="btn btn-primary" />
-				</div>
-				<div class="col-md-auto">
-					@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
-				</div>
-			</div>
-		</div>
-}
-
-</div>
-<div class="card-body border-top">
-
-    <h2>Transaction Table Section</h2>
-    <div class="page-breadcrumb">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CUSTOMERDEMOGRAPHICS</a></li>
-                <li class="breadcrumb-item active" aria-current="page">CUSTOMERCUSTOMERDEMO</li>
-            </ol>
-        </nav>
-    </div>
-    <br />
-		@using (Html.BeginForm("Edit", "Customerdemographics", FormMethod.Get))
-		{
-			<div class="row">
-				<div class="col-sm-3">
-					<label>Find by CustomerTypeID:</label>
-				</div>
-			</div>
-
-			<div class="input-group mb-3">
-				@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
-                <div class="input-group-append">
-					<input type="submit" class="btn btn-primary" value="Data Search" />
-				</div>
-			</div>
-
-
-			@Html.Hidden("CustomerTypeID", (string)ViewBag.CustomerTypeID)
-
-<!-- ============================================================== -->
-<!-- data table  -->
-<!-- ============================================================== -->
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-<div class="card">
-    <div class="card-header">
-        <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
-        <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+    <div class="section-block" id="basicform">
+        <h3 class="section-title">Main Table Section</h3>
+        <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
     </div>
-    <div class="card-body">
+    <div class="card">
+        <h5 class="card-header">CUSTOMERDEMOGRAPHICS</h5>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="table-responsive">
-            <table id="example" class="table table-striped table-bordered second" style="width:100%">
-                <thead>
-					<tr>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Customercustomerdemo.Customerid)*@
-							@Html.ActionLink("Customerid", "Edit", new { ViewBag.PgeSize, ViewBag.CustomerTypeID, sortOrder = ViewBag.CustomeridSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Customercustomerdemo.Customertypeid)*@
-							@Html.ActionLink("Customertypeid", "Edit", new { ViewBag.PgeSize, ViewBag.CustomerTypeID, sortOrder = ViewBag.CustomertypeidSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
-				@Html.Partial("_CustomerdemographicsCustomercustomerdemoEditDetlMaster", Model.CustomercustomerdemoVwDetl)
 
-			</table>
-        
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Customerdemographics.CustomerTypeID, htmlAttributes: new { @class = "col-form-label" })
 
+                            @Html.EditorFor(model => model.Customerdemographics.CustomerTypeID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Customerdemographics.CustomerTypeID, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Customerdemographics.CustomerDesc, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Customerdemographics.CustomerDesc, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Customerdemographics.CustomerDesc, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                        <div class="col-md-auto">
+                            @Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="card-body border-top">
+
+            <h2>Transaction Table Section</h2>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">CUSTOMERDEMOGRAPHICS</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">CUSTOMERCUSTOMERDEMO</li>
+                    </ol>
+                </nav>
+            </div>
+            <br />
+            @using (Html.BeginForm("Edit", "Customerdemographics", FormMethod.Get))
+            {
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Find by CustomerTypeID:</label>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-primary" value="Data Search" />
+                    </div>
+                </div>
+
+
+                @Html.Hidden("CustomerTypeID", (string)ViewBag.CustomerTypeID)
+
+                <!-- ============================================================== -->
+                <!-- data table  -->
+                <!-- ============================================================== -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+                            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Customercustomerdemo.Customerid)*@
+                                                @Html.ActionLink("Customerid", "Edit", new { ViewBag.PgeSize, ViewBag.CustomerTypeID, sortOrder = ViewBag.CustomeridSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Customercustomerdemo.Customertypeid)*@
+                                                @Html.ActionLink("Customertypeid", "Edit", new { ViewBag.PgeSize, ViewBag.CustomerTypeID, sortOrder = ViewBag.CustomertypeidSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    @Html.Partial("_CustomerdemographicsCustomercustomerdemoEditDetlMaster", Model.CustomercustomerdemoVwDetl)
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end data table  -->
+                    <!-- ============================================================== -->
+
+                </div>
+            }
+        </div>
     </div>
-</div>
-</div>
-<!-- ============================================================== -->
-<!-- end data table  -->
-<!-- ============================================================== -->
-
-    </div>
-		}
-</div>
-</div>
 </div>
 @section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")
 
-	}
+}

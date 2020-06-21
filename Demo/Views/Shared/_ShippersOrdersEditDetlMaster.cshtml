@@ -3,84 +3,84 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 <tbody>
-	@foreach (var item in Model)
-	{
-		<tr>
-			<td>
-				@Html.DisplayFor(modelItem => item.OrderID)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.CustomerID)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.EmployeeID)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.OrderDate)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.RequiredDate)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShippedDate)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipVia)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Freight)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipName)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipAddress)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipCity)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipRegion)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipPostalCode)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ShipCountry)
-			</td>
-			<td>
-				@*@Html.ActionLink("Edit", "Edit", "Orders", new { OrderID = item.OrderID }, new { htmlAttributes = new { @class = "form-control" } })*@
-				@Html.ActionLink("Edit", "Edit", "Orders", new { OrderID = item.OrderID, ShipVia = item.ShipVia }, new { htmlAttributes = new { @class = "form-control" } })
-			</td>
-			<td>
-				@*@Html.ActionLink("Details", "Details", "Orders", new { OrderID = item.OrderID }, new { htmlAttributes = new { @class = "form-control" } })*@
-				@Html.ActionLink("Details", "Details", "Orders", new { OrderID = item.OrderID, ShipVia = item.ShipVia }, new { htmlAttributes = new { @class = "form-control" } })
-			</td>
-			<td>
-				@*@Html.ActionLink("Delete", "Delete", "Orders", new { OrderID = item.OrderID }, new { @class = "btn btn-danger btn-sm" })*@
-				@Html.ActionLink("Delete", "Delete", "Orders", new { OrderID = item.OrderID, ShipVia = item.ShipVia }, new { @class = "btn btn-danger btn-sm" })
-			</td>
-		</tr>
-	}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipVia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Freight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipRegion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipPostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipCountry)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", "Orders", new { OrderID = item.OrderID }, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ActionLink("Edit", "Edit", "Orders", new { OrderID = item.OrderID, ShipVia = item.ShipVia }, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td>
+                @*@Html.ActionLink("Details", "Details", "Orders", new { OrderID = item.OrderID }, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ActionLink("Details", "Details", "Orders", new { OrderID = item.OrderID, ShipVia = item.ShipVia }, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td>
+                @*@Html.ActionLink("Delete", "Delete", "Orders", new { OrderID = item.OrderID }, new { @class = "btn btn-danger btn-sm" })*@
+                @Html.ActionLink("Delete", "Delete", "Orders", new { OrderID = item.OrderID, ShipVia = item.ShipVia }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
 </tbody>
 <tfoot>
-	<tr>
-		<th colspan="17">
-			<div class="row align-items-center">
-				<div class="col-md-auto">
-					Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-				</div>
-				<div class="col-md-auto">
-					@Html.PagedListPager(Model, page => Url.Action("Edit",
-						new { ViewBag.PgeSize, ViewBag.ShipperID, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-				</div>
-				<div class="col-md-auto">Page Size</div>
-				<div class="col-md-auto">
-					@Html.DropDownList("PgeSize", (IEnumerable<SelectListItem>)ViewBag.PgeSizeList, new { id = "ddpgesize", @class = "form-control btn-group-vertical" })
-				</div>
-			</div>
-		</th>
-	</tr>
+    <tr>
+        <th colspan="17">
+            <div class="row align-items-center">
+                <div class="col-md-auto">
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                </div>
+                <div class="col-md-auto">
+                    @Html.PagedListPager(Model, page => Url.Action("Edit",
+                        new { ViewBag.PgeSize, ViewBag.ShipperID, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                </div>
+                <div class="col-md-auto">Page Size</div>
+                <div class="col-md-auto">
+                    @Html.DropDownList("PgeSize", (IEnumerable<SelectListItem>)ViewBag.PgeSizeList, new { id = "ddpgesize", @class = "form-control btn-group-vertical" })
+                </div>
+            </div>
+        </th>
+    </tr>
 </tfoot>
-		
+
 

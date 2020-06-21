@@ -2,8 +2,8 @@
 
 @model BusinessModelLayer.Employees.EmployeesMasterDetailModel
 @{
-	ViewBag.Title = "Edit";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!-- ============================================================== -->
 <!-- pageheader -->
@@ -27,271 +27,271 @@
 <!-- ============================================================== -->
 <!-- end pageheader  -->
 <!-- ============================================================== -->
-	<strong>API call:</strong>  <a href="~/api/Employees/?EmployeeID=@Model.Employees.EmployeeID" role="link"> api/Employees/?EmployeeID=@Model.Employees.EmployeeID &raquo;</a>
+<strong>API call:</strong>  <a href="~/api/Employees/?EmployeeID=@Model.Employees.EmployeeID" role="link"> api/Employees/?EmployeeID=@Model.Employees.EmployeeID &raquo;</a>
 <br />
-	
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="section-block" id="basicform">
-            <h3 class="section-title">Main Table Section</h3>
-            <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
-        </div>
-        <div class="card">
-            <h5 class="card-header">EMPLOYEES</h5>
-            <div class="card-body">
-@using (Html.BeginForm())
-{
-	@Html.AntiForgeryToken()
 
-
-		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-		<div class="row">
-			<div class="col">
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.EmployeeID, htmlAttributes: new { @class = "col-form-label" })
-				
-							@Html.EditorFor(model => model.Employees.EmployeeID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
-							@Html.HiddenFor(model => model.Employees.EmployeeID, new { htmlAttributes = new { @class = "form-control" } })							
-											@Html.ValidationMessageFor(model => model.Employees.EmployeeID, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.LastName, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.LastName, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.LastName, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.FirstName, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.FirstName, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Title, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.Title, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Employees.Title, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.TitleOfCourtesy, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.TitleOfCourtesy, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.TitleOfCourtesy, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.BirthDate, htmlAttributes: new { @class = "col-form-label" })
-				
-			@Html.EditorFor(model => model.Employees.BirthDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
-								@Html.ValidationMessageFor(model => model.Employees.BirthDate, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.HireDate, htmlAttributes: new { @class = "col-form-label" })
-				
-			@Html.EditorFor(model => model.Employees.HireDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
-								@Html.ValidationMessageFor(model => model.Employees.HireDate, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Address, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.Address, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Employees.Address, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.City, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.City, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.City, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Region, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.Region, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.Region, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.PostalCode, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.PostalCode, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Country, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.Country, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.Country, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.HomePhone, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.HomePhone, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.HomePhone, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Extension, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.Extension, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.Extension, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Photo, htmlAttributes: new { @class = "col-form-label" })
-				
-            @*@Html.EditorFor(model => model.Employees.Photo, new { htmlAttributes = new { @class = "form-control" } })*@
-			<input type="file" name="ImageDataPhoto" id="ImageDataPhoto" onchange="" class = "form-control" />
-            @Html.HiddenFor(model => model.Employees.Photo)
-			<img src="data:image/png;base64,@Convert.ToBase64String(Model.Employees.Photo,78, Model.Employees.Photo.Length -78)" />				   
-								@Html.ValidationMessageFor(model => model.Employees.Photo, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.Notes, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.Notes, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Employees.Notes, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.ReportsTo, htmlAttributes: new { @class = "col-form-label" })
-				
-									@Html.DropDownListFor(model => model.Employees.ReportsTo,
-										new SelectList(ViewBag.Employeess, "Value", "Text"),
-										htmlAttributes: new { @class = "form-control btn btn-light" })	
-												@Html.ValidationMessageFor(model => model.Employees.ReportsTo, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Employees.PhotoPath, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Employees.PhotoPath, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Employees.PhotoPath, "", new { @class = "text-danger" })
-				
-		 </div>
-			</div>
-
-		</div>
-		<div class="form-group">
-            <div class="row">
-				<div class="col-md-auto">
-					<input type="submit" value="Save" class="btn btn-primary" />
-				</div>
-				<div class="col-md-auto">
-					@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
-				</div>
-			</div>
-		</div>
-}
-
-</div>
-<div class="card-body border-top">
-
-    <h2>Transaction Table Section</h2>
-    <div class="page-breadcrumb">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">EMPLOYEES</a></li>
-                <li class="breadcrumb-item active" aria-current="page">EMPLOYEETERRITORIES</li>
-            </ol>
-        </nav>
-    </div>
-    <br />
-		@using (Html.BeginForm("Edit", "Employees", FormMethod.Get))
-		{
-			<div class="row">
-				<div class="col-sm-3">
-					<label>Find by TerritoryID:</label>
-				</div>
-			</div>
-
-			<div class="input-group mb-3">
-				@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
-                <div class="input-group-append">
-					<input type="submit" class="btn btn-primary" value="Data Search" />
-				</div>
-			</div>
-
-
-			@Html.Hidden("EmployeeID", (int)ViewBag.EmployeeID)
-
-<!-- ============================================================== -->
-<!-- data table  -->
-<!-- ============================================================== -->
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-<div class="card">
-    <div class="card-header">
-        <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
-        <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+    <div class="section-block" id="basicform">
+        <h3 class="section-title">Main Table Section</h3>
+        <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
     </div>
-    <div class="card-body">
+    <div class="card">
+        <h5 class="card-header">EMPLOYEES</h5>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="table-responsive">
-            <table id="example" class="table table-striped table-bordered second" style="width:100%">
-                <thead>
-					<tr>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Employeeterritories.Employeeid)*@
-							@Html.ActionLink("Employeeid", "Edit", new { ViewBag.PgeSize, ViewBag.EmployeeID, sortOrder = ViewBag.EmployeeidSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Employeeterritories.Territoryid)*@
-							@Html.ActionLink("Territoryid", "Edit", new { ViewBag.PgeSize, ViewBag.EmployeeID, sortOrder = ViewBag.TerritoryidSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
-				@Html.Partial("_EmployeesEmployeeterritoriesEditDetlMaster", Model.EmployeeterritoriesVwDetl)
 
-			</table>
-        
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.EmployeeID, htmlAttributes: new { @class = "col-form-label" })
 
+                            @Html.EditorFor(model => model.Employees.EmployeeID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                            @Html.HiddenFor(model => model.Employees.EmployeeID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.EmployeeID, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.LastName, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.LastName, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.FirstName, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.FirstName, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Title, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.Title, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Employees.Title, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.TitleOfCourtesy, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.TitleOfCourtesy, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.TitleOfCourtesy, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.BirthDate, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.BirthDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
+                            @Html.ValidationMessageFor(model => model.Employees.BirthDate, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.HireDate, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.HireDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
+                            @Html.ValidationMessageFor(model => model.Employees.HireDate, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Address, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.Address, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Employees.Address, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.City, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.City, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.City, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Region, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.Region, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.Region, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.PostalCode, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.PostalCode, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Country, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.Country, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.Country, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.HomePhone, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.HomePhone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.HomePhone, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Extension, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.Extension, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.Extension, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Photo, htmlAttributes: new { @class = "col-form-label" })
+
+                            @*@Html.EditorFor(model => model.Employees.Photo, new { htmlAttributes = new { @class = "form-control" } })*@
+                            <input type="file" name="ImageDataPhoto" id="ImageDataPhoto" onchange="" class="form-control" />
+                            @Html.HiddenFor(model => model.Employees.Photo)
+                            <img src="data:image/png;base64,@Convert.ToBase64String(Model.Employees.Photo,78, Model.Employees.Photo.Length -78)" />
+                            @Html.ValidationMessageFor(model => model.Employees.Photo, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.Notes, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Employees.Notes, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.ReportsTo, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.DropDownListFor(model => model.Employees.ReportsTo,
+                                new SelectList(ViewBag.Employeess, "Value", "Text"),
+                                htmlAttributes: new { @class = "form-control btn btn-light" })
+                            @Html.ValidationMessageFor(model => model.Employees.ReportsTo, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Employees.PhotoPath, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Employees.PhotoPath, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Employees.PhotoPath, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                        <div class="col-md-auto">
+                            @Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="card-body border-top">
+
+            <h2>Transaction Table Section</h2>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">EMPLOYEES</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">EMPLOYEETERRITORIES</li>
+                    </ol>
+                </nav>
+            </div>
+            <br />
+            @using (Html.BeginForm("Edit", "Employees", FormMethod.Get))
+            {
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Find by TerritoryID:</label>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-primary" value="Data Search" />
+                    </div>
+                </div>
+
+
+                @Html.Hidden("EmployeeID", (int)ViewBag.EmployeeID)
+
+                <!-- ============================================================== -->
+                <!-- data table  -->
+                <!-- ============================================================== -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+                            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Employeeterritories.Employeeid)*@
+                                                @Html.ActionLink("Employeeid", "Edit", new { ViewBag.PgeSize, ViewBag.EmployeeID, sortOrder = ViewBag.EmployeeidSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Employeeterritories.Territoryid)*@
+                                                @Html.ActionLink("Territoryid", "Edit", new { ViewBag.PgeSize, ViewBag.EmployeeID, sortOrder = ViewBag.TerritoryidSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    @Html.Partial("_EmployeesEmployeeterritoriesEditDetlMaster", Model.EmployeeterritoriesVwDetl)
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end data table  -->
+                    <!-- ============================================================== -->
+
+                </div>
+            }
+        </div>
     </div>
-</div>
-</div>
-<!-- ============================================================== -->
-<!-- end data table  -->
-<!-- ============================================================== -->
-
-    </div>
-		}
-</div>
-</div>
 </div>
 @section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")
 
-		<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 
 
-		<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
-		<script>
-			$(function () {
-				$(".datepicker").datepicker({
-					//dateFormat: "mm/dd/yyyy",
-					changeMonth: true,
-					changeYear: true,
-					yearRange: "-10:+10",
-					//minDate: new Date(2005, 0, 1),
-					//maxDate: new Date(2025, 0, 1),
-					showOn: "both",
-					//buttonText: "Select"
-					buttonText : "<i class='fa fa-calendar'></i>"
-				});
-			});
-		</script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-	}
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                //dateFormat: "mm/dd/yyyy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-10:+10",
+                //minDate: new Date(2005, 0, 1),
+                //maxDate: new Date(2025, 0, 1),
+                showOn: "both",
+                //buttonText: "Select"
+                buttonText: "<i class='fa fa-calendar'></i>"
+            });
+        });
+    </script>
+
+}

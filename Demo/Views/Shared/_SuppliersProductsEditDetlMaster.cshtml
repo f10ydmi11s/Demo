@@ -3,72 +3,72 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 <tbody>
-	@foreach (var item in Model)
-	{
-		<tr>
-			<td>
-				@Html.DisplayFor(modelItem => item.ProductID)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ProductName)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.SupplierID)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.CategoryID)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.QuantityPerUnit)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.UnitPrice)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.UnitsInStock)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.UnitsOnOrder)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.ReorderLevel)
-			</td>
-			<td>
-				@Html.DisplayFor(modelItem => item.Discontinued)
-			</td>
-			<td>
-				@*@Html.ActionLink("Edit", "Edit", "Products", new { ProductID = item.ProductID }, new { htmlAttributes = new { @class = "form-control" } })*@
-				@Html.ActionLink("Edit", "Edit", "Products", new { ProductID = item.ProductID, SupplierID = item.SupplierID }, new { htmlAttributes = new { @class = "form-control" } })
-			</td>
-			<td>
-				@*@Html.ActionLink("Details", "Details", "Products", new { ProductID = item.ProductID }, new { htmlAttributes = new { @class = "form-control" } })*@
-				@Html.ActionLink("Details", "Details", "Products", new { ProductID = item.ProductID, SupplierID = item.SupplierID }, new { htmlAttributes = new { @class = "form-control" } })
-			</td>
-			<td>
-				@*@Html.ActionLink("Delete", "Delete", "Products", new { ProductID = item.ProductID }, new { @class = "btn btn-danger btn-sm" })*@
-				@Html.ActionLink("Delete", "Delete", "Products", new { ProductID = item.ProductID, SupplierID = item.SupplierID }, new { @class = "btn btn-danger btn-sm" })
-			</td>
-		</tr>
-	}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReorderLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discontinued)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", "Products", new { ProductID = item.ProductID }, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ActionLink("Edit", "Edit", "Products", new { ProductID = item.ProductID, SupplierID = item.SupplierID }, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td>
+                @*@Html.ActionLink("Details", "Details", "Products", new { ProductID = item.ProductID }, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ActionLink("Details", "Details", "Products", new { ProductID = item.ProductID, SupplierID = item.SupplierID }, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td>
+                @*@Html.ActionLink("Delete", "Delete", "Products", new { ProductID = item.ProductID }, new { @class = "btn btn-danger btn-sm" })*@
+                @Html.ActionLink("Delete", "Delete", "Products", new { ProductID = item.ProductID, SupplierID = item.SupplierID }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
 </tbody>
 <tfoot>
-	<tr>
-		<th colspan="13">
-			<div class="row align-items-center">
-				<div class="col-md-auto">
-					Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-				</div>
-				<div class="col-md-auto">
-					@Html.PagedListPager(Model, page => Url.Action("Edit",
-						new { ViewBag.PgeSize, ViewBag.SupplierID, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-				</div>
-				<div class="col-md-auto">Page Size</div>
-				<div class="col-md-auto">
-					@Html.DropDownList("PgeSize", (IEnumerable<SelectListItem>)ViewBag.PgeSizeList, new { id = "ddpgesize", @class = "form-control btn-group-vertical" })
-				</div>
-			</div>
-		</th>
-	</tr>
+    <tr>
+        <th colspan="13">
+            <div class="row align-items-center">
+                <div class="col-md-auto">
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                </div>
+                <div class="col-md-auto">
+                    @Html.PagedListPager(Model, page => Url.Action("Edit",
+                        new { ViewBag.PgeSize, ViewBag.SupplierID, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                </div>
+                <div class="col-md-auto">Page Size</div>
+                <div class="col-md-auto">
+                    @Html.DropDownList("PgeSize", (IEnumerable<SelectListItem>)ViewBag.PgeSizeList, new { id = "ddpgesize", @class = "form-control btn-group-vertical" })
+                </div>
+            </div>
+        </th>
+    </tr>
 </tfoot>
-		
+
 

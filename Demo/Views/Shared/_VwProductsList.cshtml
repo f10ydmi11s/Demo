@@ -12,105 +12,105 @@
         <div class="card-body">
 
 
-    <div class="table-responsive">
-        <table id="example" class="table table-striped table-bordered second" style="width:100%">
-            <thead>
-                <tr>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ProductID)*@
-                        @Html.ActionLink("ProductID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ProductIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ProductName)*@
-                        @Html.ActionLink("ProductName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ProductNameSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.SupplierID)*@
-                        @Html.ActionLink("SupplierID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.SupplierIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.CategoryID)*@
-                        @Html.ActionLink("CategoryID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CategoryIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@
-                        @Html.ActionLink("QuantityPerUnit", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.QuantityPerUnitSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.UnitPrice)*@
-                        @Html.ActionLink("UnitPrice", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitPriceSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.UnitsInStock)*@
-                        @Html.ActionLink("UnitsInStock", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitsInStockSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.UnitsOnOrder)*@
-                        @Html.ActionLink("UnitsOnOrder", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitsOnOrderSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ReorderLevel)*@
-                        @Html.ActionLink("ReorderLevel", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ReorderLevelSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Discontinued)*@
-                        @Html.ActionLink("Discontinued", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.DiscontinuedSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProductID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProductName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SupplierID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CategoryID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.QuantityPerUnit)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UnitPrice)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UnitsInStock)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UnitsOnOrder)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ReorderLevel)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Discontinued)
-                        </td>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ProductID)*@
+                                @Html.ActionLink("ProductID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ProductIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ProductName)*@
+                                @Html.ActionLink("ProductName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ProductNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.SupplierID)*@
+                                @Html.ActionLink("SupplierID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.SupplierIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.CategoryID)*@
+                                @Html.ActionLink("CategoryID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CategoryIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@
+                                @Html.ActionLink("QuantityPerUnit", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.QuantityPerUnitSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.UnitPrice)*@
+                                @Html.ActionLink("UnitPrice", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitPriceSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.UnitsInStock)*@
+                                @Html.ActionLink("UnitsInStock", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitsInStockSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.UnitsOnOrder)*@
+                                @Html.ActionLink("UnitsOnOrder", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UnitsOnOrderSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ReorderLevel)*@
+                                @Html.ActionLink("ReorderLevel", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ReorderLevelSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Discontinued)*@
+                                @Html.ActionLink("Discontinued", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.DiscontinuedSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SupplierID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitsInStock)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ReorderLevel)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Discontinued)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { ProductID = item.ProductID })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { ProductID = item.ProductID })
-                        </td>
-                        <td>
-							@Html.ActionLink("Delete", "Delete", new { ProductID = item.ProductID }, new { @class = "btn btn-danger btn-sm" })
-                        </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { ProductID = item.ProductID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { ProductID = item.ProductID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { ProductID = item.ProductID }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
 
 
 
@@ -120,6 +120,3 @@
 <!-- ============================================================== -->
 <!-- end data table  -->
 <!-- ============================================================== -->
-
-
-

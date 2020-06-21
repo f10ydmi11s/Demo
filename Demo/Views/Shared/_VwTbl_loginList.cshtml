@@ -12,63 +12,63 @@
         <div class="card-body">
 
 
-    <div class="table-responsive">
-        <table id="example" class="table table-striped table-bordered second" style="width:100%">
-            <thead>
-                <tr>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Username)*@
-                        @Html.ActionLink("Username", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UsernameSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Password)*@
-                        @Html.ActionLink("Password", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PasswordSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Roles)*@
-                        @Html.ActionLink("Roles", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RolesSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ActiveStatus)*@
-                        @Html.ActionLink("ActiveStatus", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ActiveStatusSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Username)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Password)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Roles)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ActiveStatus)
-                        </td>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Username)*@
+                                @Html.ActionLink("Username", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.UsernameSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Password)*@
+                                @Html.ActionLink("Password", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PasswordSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Roles)*@
+                                @Html.ActionLink("Roles", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RolesSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ActiveStatus)*@
+                                @Html.ActionLink("ActiveStatus", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ActiveStatusSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Roles)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ActiveStatus)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { Username = item.Username })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { Username = item.Username })
-                        </td>
-                        <td>
-							@Html.ActionLink("Delete", "Delete", new { Username = item.Username }, new { @class = "btn btn-danger btn-sm" })
-                        </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { Username = item.Username })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { Username = item.Username })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { Username = item.Username }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
 
 
 
@@ -78,6 +78,3 @@
 <!-- ============================================================== -->
 <!-- end data table  -->
 <!-- ============================================================== -->
-
-
-

@@ -35,133 +35,133 @@
         <h5 class="card-header">orders</h5>
         <div class="card-body">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-   
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.CustomerID, htmlAttributes: new { @class = "col-form-label" })
-           
-									@Html.DropDownListFor(model => model.CustomerID,
-										new SelectList(ViewBag.Customerss, "Value", "Text"),
-										htmlAttributes: new { @class = "form-control btn btn-light" })	
-							
-                @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeID, htmlAttributes: new { @class = "col-form-label" })
-           
-									@Html.DropDownListFor(model => model.EmployeeID,
-										new SelectList(ViewBag.Employeess, "Value", "Text"),
-										htmlAttributes: new { @class = "form-control btn btn-light" })	
-							
-                @Html.ValidationMessageFor(model => model.EmployeeID, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "col-form-label" })
-           
-							@Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
-							
-                @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.RequiredDate, htmlAttributes: new { @class = "col-form-label" })
-           
-							@Html.EditorFor(model => model.RequiredDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
-							
-                @Html.ValidationMessageFor(model => model.RequiredDate, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShippedDate, htmlAttributes: new { @class = "col-form-label" })
-           
-							@Html.EditorFor(model => model.ShippedDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
-							
-                @Html.ValidationMessageFor(model => model.ShippedDate, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipVia, htmlAttributes: new { @class = "col-form-label" })
-           
-									@Html.DropDownListFor(model => model.ShipVia,
-										new SelectList(ViewBag.Shipperss, "Value", "Text"),
-										htmlAttributes: new { @class = "form-control btn btn-light" })	
-							
-                @Html.ValidationMessageFor(model => model.ShipVia, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Freight, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.Freight, new { htmlAttributes = new { @class = "form-control" } })
-									
-                @Html.ValidationMessageFor(model => model.Freight, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipName, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.ShipName, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-									
-                @Html.ValidationMessageFor(model => model.ShipName, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipAddress, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.ShipAddress, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-									
-                @Html.ValidationMessageFor(model => model.ShipAddress, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipCity, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.ShipCity, new { htmlAttributes = new { @class = "form-control" } })
-									
-                @Html.ValidationMessageFor(model => model.ShipCity, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipRegion, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.ShipRegion, new { htmlAttributes = new { @class = "form-control" } })
-									
-                @Html.ValidationMessageFor(model => model.ShipRegion, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipPostalCode, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.ShipPostalCode, new { htmlAttributes = new { @class = "form-control" } })
-									
-                @Html.ValidationMessageFor(model => model.ShipPostalCode, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipCountry, htmlAttributes: new { @class = "col-form-label" })
-           
-										@Html.EditorFor(model => model.ShipCountry, new { htmlAttributes = new { @class = "form-control" } })
-									
-                @Html.ValidationMessageFor(model => model.ShipCountry, "", new { @class = "text-danger" })
-            
-        </div>
-        <div class="form-group">
-            <div class="row">
-				<div class="col-md-auto">
-					<input type="submit" value="Create" class="btn btn-primary" />
-				</div>
-				<div class="col-md-auto">
-					@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
-				</div>
-            </div>
-        </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-}
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerID, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.DropDownListFor(model => model.CustomerID,
+                        new SelectList(ViewBag.Customerss, "Value", "Text"),
+                        htmlAttributes: new { @class = "form-control btn btn-light" })
+
+                    @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmployeeID, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.DropDownListFor(model => model.EmployeeID,
+                        new SelectList(ViewBag.Employeess, "Value", "Text"),
+                        htmlAttributes: new { @class = "form-control btn btn-light" })
+
+                    @Html.ValidationMessageFor(model => model.EmployeeID, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
+
+                    @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RequiredDate, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.RequiredDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
+
+                    @Html.ValidationMessageFor(model => model.RequiredDate, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShippedDate, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShippedDate, new { htmlAttributes = new { @class = "datepicker", @type = "datetime" } })
+
+                    @Html.ValidationMessageFor(model => model.ShippedDate, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipVia, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.DropDownListFor(model => model.ShipVia,
+                        new SelectList(ViewBag.Shipperss, "Value", "Text"),
+                        htmlAttributes: new { @class = "form-control btn btn-light" })
+
+                    @Html.ValidationMessageFor(model => model.ShipVia, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Freight, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.Freight, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.Freight, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipName, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShipName, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+
+                    @Html.ValidationMessageFor(model => model.ShipName, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipAddress, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShipAddress, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+
+                    @Html.ValidationMessageFor(model => model.ShipAddress, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipCity, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShipCity, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.ShipCity, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipRegion, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShipRegion, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.ShipRegion, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipPostalCode, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShipPostalCode, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.ShipPostalCode, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShipCountry, htmlAttributes: new { @class = "col-form-label" })
+
+                    @Html.EditorFor(model => model.ShipCountry, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.ValidationMessageFor(model => model.ShipCountry, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                        <div class="col-md-auto">
+                            @Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+                        </div>
+                    </div>
+                </div>
+
+            }
         </div>
     </div>
 </div>
@@ -171,7 +171,7 @@
 
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
+
     <script>
         $(function () {
             $(".datepicker").datepicker({
@@ -183,7 +183,7 @@
                 //maxDate: new Date(2025, 0, 1),
                 showOn: "both",
                 //buttonText: "Select"
-                buttonText : "<i class='fa fa-calendar'></i>"
+                buttonText: "<i class='fa fa-calendar'></i>"
             });
         });
     </script>

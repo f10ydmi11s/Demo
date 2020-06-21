@@ -1,446 +1,446 @@
 ﻿
-		using BusinessModelLayer;
-		using PagedList;
-		using System;
-		using System.Collections.Generic;
-		using System.Linq;
-		using System.Text;
-		using System.Web;
-		using System.Web.Mvc;
-		using System.Web.Security;
-		//using Demo.Models;
+using BusinessModelLayer;
+using PagedList;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Security;
+//using Demo.Models;
 
-		namespace Demo.Controllers
-		{
-			[Authorize]
-			public class CustomerdemographicsController : Controller
-			{
+namespace Demo.Controllers
+{
+    [Authorize]
+    public class CustomerdemographicsController : Controller
+    {
 
-				public ActionResult Index()
-				{
-					return View();
-				}
+        public ActionResult Index()
+        {
+            return View();
+        }
 
 
 
-				[HttpGet]
-				[ActionName("Create")]
-				public ActionResult Create_Get()
-				{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [HttpGet]
+        [ActionName("Create")]
+        public ActionResult Create_Get()
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-						return View();
+                    return View();
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
-				}
+        }
 
-				[HttpPost]
-				[ActionName("Create")]
-				public ActionResult Create_Post()
-				{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [HttpPost]
+        [ActionName("Create")]
+        public ActionResult Create_Post()
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
-	
-					CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-					BusinessModelLayer.CustomerdemographicsSingle customerdemographics = new BusinessModelLayer.CustomerdemographicsSingle();
-					TryUpdateModel(customerdemographics);
-					if (ModelState.IsValid)
-					{
-					//mm
-						customerdemographicsBusinessModelLayers.AddCustomerdemographics(customerdemographics);
-						return RedirectToAction("List");
-					}
-					else
-					{
-						return View();
-					}
+
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+                    BusinessModelLayer.CustomerdemographicsSingle customerdemographics = new BusinessModelLayer.CustomerdemographicsSingle();
+                    TryUpdateModel(customerdemographics);
+                    if (ModelState.IsValid)
+                    {
+                        //mm
+                        customerdemographicsBusinessModelLayers.AddCustomerdemographics(customerdemographics);
+                        return RedirectToAction("List");
+                    }
+                    else
+                    {
+                        return View();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
-				}
+        }
 
-					
-	[HttpGet]
-	public ActionResult Edit(string CustomerTypeID, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
-	{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+
+        [HttpGet]
+        public ActionResult Edit(string CustomerTypeID, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
-	
-			ViewBag.CurrentSort = sortOrder;
-			ViewBag.CustomerTypeID = CustomerTypeID;
-			List<SelectListItem> PgeSizes = new List<SelectListItem>()
-			{
-				new SelectListItem { Text = "5", Value = "5" },
-				new SelectListItem { Text = "10", Value = "10" },
-				new SelectListItem { Text = "25", Value = "25" },
-				new SelectListItem { Text = "50", Value = "50" },
-				new SelectListItem { Text = "100", Value = "100" },
 
-			};
-			//Assigning generic list to ViewBag
-			ViewBag.PgeSizeList = PgeSizes;
+                    ViewBag.CurrentSort = sortOrder;
+                    ViewBag.CustomerTypeID = CustomerTypeID;
+                    List<SelectListItem> PgeSizes = new List<SelectListItem>()
+            {
+                new SelectListItem { Text = "5", Value = "5" },
+                new SelectListItem { Text = "10", Value = "10" },
+                new SelectListItem { Text = "25", Value = "25" },
+                new SelectListItem { Text = "50", Value = "50" },
+                new SelectListItem { Text = "100", Value = "100" },
 
-			if (searchString != null)
-			{
-				page = 1;
-			}
-			else
-			{
-				searchString = currentFilter;
-			}
+            };
+                    //Assigning generic list to ViewBag
+                    ViewBag.PgeSizeList = PgeSizes;
 
-			ViewBag.CurrentFilter = searchString;
+                    if (searchString != null)
+                    {
+                        page = 1;
+                    }
+                    else
+                    {
+                        searchString = currentFilter;
+                    }
 
-			//CUSTOMERDEMOGRAPHICS TABLE MASTER
-			BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel pageModel = new BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel();
-			CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-			Customerdemographics.CustomerdemographicsMasterDetailModel customerdemographicsMasterDetailModel = new Customerdemographics.CustomerdemographicsMasterDetailModel();
+                    ViewBag.CurrentFilter = searchString;
 
-			pageModel.Customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().FirstOrDefault(x => x.CustomerTypeID == CustomerTypeID);
+                    //CUSTOMERDEMOGRAPHICS TABLE MASTER
+                    BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel pageModel = new BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel();
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+                    Customerdemographics.CustomerdemographicsMasterDetailModel customerdemographicsMasterDetailModel = new Customerdemographics.CustomerdemographicsMasterDetailModel();
 
-			int pageSize = 10;
-			if (PgeSize != null)
-			{ Int32.TryParse(PgeSize, out pageSize); }
-			ViewBag.PgeSize = pageSize;
+                    pageModel.Customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().FirstOrDefault(x => x.CustomerTypeID == CustomerTypeID);
 
-			int pageNumber = (page ?? 1);
+                    int pageSize = 10;
+                    if (PgeSize != null)
+                    { Int32.TryParse(PgeSize, out pageSize); }
+                    ViewBag.PgeSize = pageSize;
 
-		
-			//CUSTOMERCUSTOMERDEMO DETAIL BEGIN
+                    int pageNumber = (page ?? 1);
 
-			ViewBag.CustomerTypeIDSortParm = String.IsNullOrEmpty(sortOrder) ? "CustomerTypeID_desc" : "";
-			CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
-			
-			List<BusinessModelLayer.Vwcustomercustomerdemo> customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllVwcustomercustomerdemos().FindAll(x => x.CustomerTypeID == CustomerTypeID).ToList();
-			
-			if (!String.IsNullOrEmpty(searchString))
-			{
-				customercustomerdemos = customercustomerdemos.Where(s => s.CustomerTypeID == CustomerTypeID && s.CustomerTypeID.ToString().ToLower().Contains(searchString.ToLower())).ToList();
-			}
 
-			switch (sortOrder)
-			{
-				case "CustomerTypeID_desc":
-					customercustomerdemos = customercustomerdemos.OrderByDescending(s => s.CustomerTypeID).ToList();
-					break;
-				default:  // CustomerTypeID ascending 
-					customercustomerdemos = customercustomerdemos.OrderBy(s => s.CustomerTypeID).ToList();
-					break;
-			}
-			pageModel.CustomercustomerdemoVwDetl = customercustomerdemos.ToPagedList(pageNumber, pageSize);
+                    //CUSTOMERCUSTOMERDEMO DETAIL BEGIN
 
-			//CUSTOMERCUSTOMERDEMO DETAIL END
-			return View(pageModel);
+                    ViewBag.CustomerTypeIDSortParm = String.IsNullOrEmpty(sortOrder) ? "CustomerTypeID_desc" : "";
+                    CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
+
+                    List<BusinessModelLayer.Vwcustomercustomerdemo> customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllVwcustomercustomerdemos().FindAll(x => x.CustomerTypeID == CustomerTypeID).ToList();
+
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        customercustomerdemos = customercustomerdemos.Where(s => s.CustomerTypeID == CustomerTypeID && s.CustomerTypeID.ToString().ToLower().Contains(searchString.ToLower())).ToList();
+                    }
+
+                    switch (sortOrder)
+                    {
+                        case "CustomerTypeID_desc":
+                            customercustomerdemos = customercustomerdemos.OrderByDescending(s => s.CustomerTypeID).ToList();
+                            break;
+                        default:  // CustomerTypeID ascending 
+                            customercustomerdemos = customercustomerdemos.OrderBy(s => s.CustomerTypeID).ToList();
+                            break;
+                    }
+                    pageModel.CustomercustomerdemoVwDetl = customercustomerdemos.ToPagedList(pageNumber, pageSize);
+
+                    //CUSTOMERCUSTOMERDEMO DETAIL END
+                    return View(pageModel);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
-	}
+        }
 
-	[HttpPost]
-	[ActionName("Edit")]
-	public ActionResult Edit_Post(CustomerdemographicsSingle customerdemographics, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
-	{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [HttpPost]
+        [ActionName("Edit")]
+        public ActionResult Edit_Post(CustomerdemographicsSingle customerdemographics, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-		CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-		if (ModelState.IsValid)
-		{
-		//mm
-			customerdemographicsBusinessModelLayers.UpdateCustomerdemographics(customerdemographics);
-			return RedirectToAction("List");
-		}
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+                    if (ModelState.IsValid)
+                    {
+                        //mm
+                        customerdemographicsBusinessModelLayers.UpdateCustomerdemographics(customerdemographics);
+                        return RedirectToAction("List");
+                    }
 
-		ViewBag.CurrentSort = sortOrder;
-		ViewBag.CustomerTypeID = customerdemographics.CustomerTypeID;
-		List<SelectListItem> PgeSizes = new List<SelectListItem>()
-		{
-			new SelectListItem { Text = "5", Value = "5" },
-			new SelectListItem { Text = "10", Value = "10" },
-			new SelectListItem { Text = "25", Value = "25" },
-			new SelectListItem { Text = "50", Value = "50" },
-			new SelectListItem { Text = "100", Value = "100" },
+                    ViewBag.CurrentSort = sortOrder;
+                    ViewBag.CustomerTypeID = customerdemographics.CustomerTypeID;
+                    List<SelectListItem> PgeSizes = new List<SelectListItem>()
+        {
+            new SelectListItem { Text = "5", Value = "5" },
+            new SelectListItem { Text = "10", Value = "10" },
+            new SelectListItem { Text = "25", Value = "25" },
+            new SelectListItem { Text = "50", Value = "50" },
+            new SelectListItem { Text = "100", Value = "100" },
 
-		};
-		//Assigning generic list to ViewBag
-		ViewBag.PgeSizeList = PgeSizes;
+        };
+                    //Assigning generic list to ViewBag
+                    ViewBag.PgeSizeList = PgeSizes;
 
-		if (searchString != null)
-		{
-			page = 1;
-		}
-		else
-		{
-			searchString = currentFilter;
-		}
+                    if (searchString != null)
+                    {
+                        page = 1;
+                    }
+                    else
+                    {
+                        searchString = currentFilter;
+                    }
 
-		ViewBag.CurrentFilter = searchString;
+                    ViewBag.CurrentFilter = searchString;
 
-		//CUSTOMERDEMOGRAPHICS TABLE MASTER
+                    //CUSTOMERDEMOGRAPHICS TABLE MASTER
 
-		BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel pageModel = new BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel
-		{
-			Customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().Single(x => x.CustomerTypeID == customerdemographics.CustomerTypeID)
-		};
+                    BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel pageModel = new BusinessModelLayer.Customerdemographics.CustomerdemographicsMasterDetailModel
+                    {
+                        Customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().Single(x => x.CustomerTypeID == customerdemographics.CustomerTypeID)
+                    };
 
-			int pageSize = 10;
-			if (PgeSize != null)
-			{ Int32.TryParse(PgeSize, out pageSize); }
-			ViewBag.PgeSize = pageSize;
+                    int pageSize = 10;
+                    if (PgeSize != null)
+                    { Int32.TryParse(PgeSize, out pageSize); }
+                    ViewBag.PgeSize = pageSize;
 
-			int pageNumber = (page ?? 1);
+                    int pageNumber = (page ?? 1);
 
-				//CUSTOMERCUSTOMERDEMO DETAIL BEGIN
-		ViewBag.CustomerIDSortParm = String.IsNullOrEmpty(sortOrder) ? "CustomerID_desc" : "";
-		CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
-		pageModel.CustomercustomerdemoVwDetl = customercustomerdemoBusinessModelLayers.GetAllVwcustomercustomerdemos().FindAll(x => x.CustomerTypeID == customerdemographics.CustomerTypeID).ToList().ToPagedList(pageNumber, pageSize);
+                    //CUSTOMERCUSTOMERDEMO DETAIL BEGIN
+                    ViewBag.CustomerIDSortParm = String.IsNullOrEmpty(sortOrder) ? "CustomerID_desc" : "";
+                    CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
+                    pageModel.CustomercustomerdemoVwDetl = customercustomerdemoBusinessModelLayers.GetAllVwcustomercustomerdemos().FindAll(x => x.CustomerTypeID == customerdemographics.CustomerTypeID).ToList().ToPagedList(pageNumber, pageSize);
 
-		if (!String.IsNullOrEmpty(searchString))
-		{
-			pageModel.CustomercustomerdemoVwDetl = pageModel.CustomercustomerdemoVwDetl.Where(s => s.CustomerID.ToString().ToLower().Contains(searchString.ToLower())).ToList().ToPagedList(pageNumber, pageSize);
-		}
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        pageModel.CustomercustomerdemoVwDetl = pageModel.CustomercustomerdemoVwDetl.Where(s => s.CustomerID.ToString().ToLower().Contains(searchString.ToLower())).ToList().ToPagedList(pageNumber, pageSize);
+                    }
 
-		switch (sortOrder)
-		{
-			case "CustomerID_desc":
-				pageModel.CustomercustomerdemoVwDetl = pageModel.CustomercustomerdemoVwDetl.OrderByDescending(s => s.CustomerID).ToList().ToPagedList(pageNumber, pageSize);
-				break;
-			default:  // CustomerID ascending 
-				pageModel.CustomercustomerdemoVwDetl = pageModel.CustomercustomerdemoVwDetl.OrderBy(s => s.CustomerID).ToList().ToPagedList(pageNumber, pageSize);
-				break;
-		}
-		//CUSTOMERCUSTOMERDEMO DETAIL END
-			return View(pageModel);
+                    switch (sortOrder)
+                    {
+                        case "CustomerID_desc":
+                            pageModel.CustomercustomerdemoVwDetl = pageModel.CustomercustomerdemoVwDetl.OrderByDescending(s => s.CustomerID).ToList().ToPagedList(pageNumber, pageSize);
+                            break;
+                        default:  // CustomerID ascending 
+                            pageModel.CustomercustomerdemoVwDetl = pageModel.CustomercustomerdemoVwDetl.OrderBy(s => s.CustomerID).ToList().ToPagedList(pageNumber, pageSize);
+                            break;
+                    }
+                    //CUSTOMERCUSTOMERDEMO DETAIL END
+                    return View(pageModel);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
-	}
+        }
 
-				[HttpGet]
-				public ActionResult Delete(string CustomerTypeID)
-				{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [HttpGet]
+        public ActionResult Delete(string CustomerTypeID)
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
-	
-					CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-					
-											BusinessModelLayer.CustomerdemographicsSingle customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().FirstOrDefault(x => x.CustomerTypeID == CustomerTypeID);					
-						
-					return View(customerdemographics);
+
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+
+                    BusinessModelLayer.CustomerdemographicsSingle customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().FirstOrDefault(x => x.CustomerTypeID == CustomerTypeID);
+
+                    return View(customerdemographics);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
-				}
+        }
 
-				[HttpPost]
-				[ActionName("Delete")]
-				public ActionResult Delete_Post(string CustomerTypeID)
-				{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult Delete_Post(string CustomerTypeID)
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
-					CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-					
-					//mm
-						customerdemographicsBusinessModelLayers.DeleteCustomerdemographics(CustomerTypeID);					
-											
-										
-					return RedirectToAction("List");
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+
+                    //mm
+                    customerdemographicsBusinessModelLayers.DeleteCustomerdemographics(CustomerTypeID);
+
+
+                    return RedirectToAction("List");
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
-				}
+        }
 
-				[HttpGet]
-				public ActionResult Details(string CustomerTypeID)
-				{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [HttpGet]
+        public ActionResult Details(string CustomerTypeID)
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
-	
-					CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-			
-											BusinessModelLayer.CustomerdemographicsSingle customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().FirstOrDefault(x => x.CustomerTypeID == CustomerTypeID);					
-											
-					return View(customerdemographics);
+
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+
+                    BusinessModelLayer.CustomerdemographicsSingle customerdemographics = customerdemographicsBusinessModelLayers.GetAllCustomerdemographicss().FirstOrDefault(x => x.CustomerTypeID == CustomerTypeID);
+
+                    return View(customerdemographics);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
-				}
+        }
 
-				[OutputCache(CacheProfile = "CtrlCache")]
-				[HttpGet]
-				public ViewResult List(string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
-				{
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+        [OutputCache(CacheProfile = "CtrlCache")]
+        [HttpGet]
+        public ViewResult List(string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
+        {
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-					ViewBag.CurrentSort = sortOrder;
-					ViewBag.CustomerDescSortParm = String.IsNullOrEmpty(sortOrder) ? "CustomerDesc_desc" : "";
-					List<SelectListItem> PgeSizes = new List<SelectListItem>()
-					{
-						new SelectListItem { Text = "5", Value = "5" },
-						new SelectListItem { Text = "10", Value = "10" },
-						new SelectListItem { Text = "25", Value = "25" },
-						new SelectListItem { Text = "50", Value = "50" },
-						new SelectListItem { Text = "100", Value = "100" },
+                    ViewBag.CurrentSort = sortOrder;
+                    ViewBag.CustomerDescSortParm = String.IsNullOrEmpty(sortOrder) ? "CustomerDesc_desc" : "";
+                    List<SelectListItem> PgeSizes = new List<SelectListItem>()
+                    {
+                        new SelectListItem { Text = "5", Value = "5" },
+                        new SelectListItem { Text = "10", Value = "10" },
+                        new SelectListItem { Text = "25", Value = "25" },
+                        new SelectListItem { Text = "50", Value = "50" },
+                        new SelectListItem { Text = "100", Value = "100" },
 
-					};
-					//Assigning generic list to ViewBag
-					ViewBag.PgeSizeList = PgeSizes;
+                    };
+                    //Assigning generic list to ViewBag
+                    ViewBag.PgeSizeList = PgeSizes;
 
-					if (searchString != null)
-					{
-						page = 1;
-					}
-					else
-					{
-						searchString = currentFilter;
-					}
+                    if (searchString != null)
+                    {
+                        page = 1;
+                    }
+                    else
+                    {
+                        searchString = currentFilter;
+                    }
 
-					ViewBag.CurrentFilter = searchString;
+                    ViewBag.CurrentFilter = searchString;
 
-					CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
-					List<BusinessModelLayer.Vwcustomerdemographics> vwcustomerdemographicss = customerdemographicsBusinessModelLayers.GetAllVwcustomerdemographicss();
-					
-					if (!String.IsNullOrEmpty(searchString))
-					{
-						vwcustomerdemographicss = vwcustomerdemographicss.Where(s => s.CustomerDesc.ToString().ToLower().Contains(searchString.ToLower())).ToList();
-					}
+                    CustomerdemographicsBusinessModelLayers customerdemographicsBusinessModelLayers = new CustomerdemographicsBusinessModelLayers();
+                    List<BusinessModelLayer.Vwcustomerdemographics> vwcustomerdemographicss = customerdemographicsBusinessModelLayers.GetAllVwcustomerdemographicss();
 
-					switch (sortOrder)
-					{
-						case "CustomerDesc_desc":
-							vwcustomerdemographicss = vwcustomerdemographicss.OrderByDescending(s => s.CustomerDesc).ToList();
-							break;
-						//case "!!!":
-						//	vwcustomerdemographicss = vwcustomerdemographicss.OrderBy(s => s.!!!).ToList();
-						//	break;
-						//case "!!!_desc":
-						//	vwcustomerdemographicss = vwcustomerdemographicss.OrderByDescending(s => s.!!!).ToList();
-						//	break;
-						default:  // CustomerDesc ascending 
-							vwcustomerdemographicss = vwcustomerdemographicss.OrderBy(s => s.CustomerDesc).ToList();
-							break;
-					}
+                    if (!String.IsNullOrEmpty(searchString))
+                    {
+                        vwcustomerdemographicss = vwcustomerdemographicss.Where(s => s.CustomerDesc.ToString().ToLower().Contains(searchString.ToLower())).ToList();
+                    }
 
-					int pageSize = 10;
-					if (PgeSize != null)
-					{ Int32.TryParse(PgeSize, out pageSize); }
-					ViewBag.PgeSize = pageSize;
-					int pageNumber = (page ?? 1);
-					return View(vwcustomerdemographicss.ToPagedList(pageNumber, pageSize));
+                    switch (sortOrder)
+                    {
+                        case "CustomerDesc_desc":
+                            vwcustomerdemographicss = vwcustomerdemographicss.OrderByDescending(s => s.CustomerDesc).ToList();
+                            break;
+                        //case "!!!":
+                        //	vwcustomerdemographicss = vwcustomerdemographicss.OrderBy(s => s.!!!).ToList();
+                        //	break;
+                        //case "!!!_desc":
+                        //	vwcustomerdemographicss = vwcustomerdemographicss.OrderByDescending(s => s.!!!).ToList();
+                        //	break;
+                        default:  // CustomerDesc ascending 
+                            vwcustomerdemographicss = vwcustomerdemographicss.OrderBy(s => s.CustomerDesc).ToList();
+                            break;
+                    }
+
+                    int pageSize = 10;
+                    if (PgeSize != null)
+                    { Int32.TryParse(PgeSize, out pageSize); }
+                    ViewBag.PgeSize = pageSize;
+                    int pageNumber = (page ?? 1);
+                    return View(vwcustomerdemographicss.ToPagedList(pageNumber, pageSize));
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
+
+        }
+
+
+
     }
-    catch(Exception) 
-    {
-        throw;
-    }
-
-				}
-
-
-
-			}
-		}
+}

@@ -12,133 +12,133 @@
         <div class="card-body">
 
 
-    <div class="table-responsive">
-        <table id="example" class="table table-striped table-bordered second" style="width:100%">
-            <thead>
-                <tr>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.OrderID)*@
-                        @Html.ActionLink("OrderID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.OrderIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.CustomerID)*@
-                        @Html.ActionLink("CustomerID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CustomerIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.EmployeeID)*@
-                        @Html.ActionLink("EmployeeID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.EmployeeIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.OrderDate)*@
-                        @Html.ActionLink("OrderDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.OrderDateSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.RequiredDate)*@
-                        @Html.ActionLink("RequiredDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RequiredDateSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShippedDate)*@
-                        @Html.ActionLink("ShippedDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShippedDateSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipVia)*@
-                        @Html.ActionLink("ShipVia", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipViaSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Freight)*@
-                        @Html.ActionLink("Freight", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.FreightSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipName)*@
-                        @Html.ActionLink("ShipName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipNameSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipAddress)*@
-                        @Html.ActionLink("ShipAddress", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipAddressSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipCity)*@
-                        @Html.ActionLink("ShipCity", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipCitySortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipRegion)*@
-                        @Html.ActionLink("ShipRegion", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipRegionSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipPostalCode)*@
-                        @Html.ActionLink("ShipPostalCode", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipPostalCodeSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ShipCountry)*@
-                        @Html.ActionLink("ShipCountry", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipCountrySortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.OrderID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CustomerID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EmployeeID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.OrderDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RequiredDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShippedDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipVia)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Freight)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipAddress)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipCity)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipRegion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipPostalCode)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ShipCountry)
-                        </td>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.OrderID)*@
+                                @Html.ActionLink("OrderID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.OrderIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.CustomerID)*@
+                                @Html.ActionLink("CustomerID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CustomerIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.EmployeeID)*@
+                                @Html.ActionLink("EmployeeID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.EmployeeIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.OrderDate)*@
+                                @Html.ActionLink("OrderDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.OrderDateSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.RequiredDate)*@
+                                @Html.ActionLink("RequiredDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RequiredDateSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShippedDate)*@
+                                @Html.ActionLink("ShippedDate", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShippedDateSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipVia)*@
+                                @Html.ActionLink("ShipVia", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipViaSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Freight)*@
+                                @Html.ActionLink("Freight", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.FreightSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipName)*@
+                                @Html.ActionLink("ShipName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipAddress)*@
+                                @Html.ActionLink("ShipAddress", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipAddressSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipCity)*@
+                                @Html.ActionLink("ShipCity", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipCitySortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipRegion)*@
+                                @Html.ActionLink("ShipRegion", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipRegionSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipPostalCode)*@
+                                @Html.ActionLink("ShipPostalCode", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipPostalCodeSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ShipCountry)*@
+                                @Html.ActionLink("ShipCountry", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ShipCountrySortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OrderID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CustomerID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EmployeeID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.OrderDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequiredDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShippedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipVia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Freight)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipAddress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipCity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipRegion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipPostalCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShipCountry)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { OrderID = item.OrderID })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { OrderID = item.OrderID })
-                        </td>
-                        <td>
-							@Html.ActionLink("Delete", "Delete", new { OrderID = item.OrderID }, new { @class = "btn btn-danger btn-sm" })
-                        </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { OrderID = item.OrderID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { OrderID = item.OrderID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { OrderID = item.OrderID }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
 
 
 
@@ -148,6 +148,3 @@
 <!-- ============================================================== -->
 <!-- end data table  -->
 <!-- ============================================================== -->
-
-
-

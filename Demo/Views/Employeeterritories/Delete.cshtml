@@ -37,32 +37,33 @@
     <div class="card">
         <h5 class="card-header">EMPLOYEETERRITORIES</h5>
         <div class="card-body">
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EmployeeID)
-        </dt>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmployeeID)
+                </dt>
 
-        <dd>
-		            @Html.DisplayFor(model => model.EmployeeID)
-		        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TerritoryID)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.EmployeeID)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TerritoryID)
+                </dt>
 
-        <dd>
-		            @Html.DisplayFor(model => model.TerritoryID)
-		        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.TerritoryID)
+                </dd>
 
-    </dl>
+            </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-primary" />  
-			@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
-        </div>
-    }
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-primary" />
+                    @Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+                </div>
+            }
 
         </div>
     </div>

@@ -2,8 +2,8 @@
 
 @model BusinessModelLayer.Suppliers.SuppliersMasterDetailModel
 @{
-	ViewBag.Title = "Edit";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!-- ============================================================== -->
 <!-- pageheader -->
@@ -27,234 +27,234 @@
 <!-- ============================================================== -->
 <!-- end pageheader  -->
 <!-- ============================================================== -->
-	<strong>API call:</strong>  <a href="~/api/Suppliers/?SupplierID=@Model.Suppliers.SupplierID" role="link"> api/Suppliers/?SupplierID=@Model.Suppliers.SupplierID &raquo;</a>
+<strong>API call:</strong>  <a href="~/api/Suppliers/?SupplierID=@Model.Suppliers.SupplierID" role="link"> api/Suppliers/?SupplierID=@Model.Suppliers.SupplierID &raquo;</a>
 <br />
-	
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="section-block" id="basicform">
-            <h3 class="section-title">Main Table Section</h3>
-            <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
-        </div>
-        <div class="card">
-            <h5 class="card-header">SUPPLIERS</h5>
-            <div class="card-body">
-@using (Html.BeginForm())
-{
-	@Html.AntiForgeryToken()
 
-
-		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-		<div class="row">
-			<div class="col">
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.SupplierID, htmlAttributes: new { @class = "col-form-label" })
-				
-							@Html.EditorFor(model => model.Suppliers.SupplierID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
-							@Html.HiddenFor(model => model.Suppliers.SupplierID, new { htmlAttributes = new { @class = "form-control" } })							
-											@Html.ValidationMessageFor(model => model.Suppliers.SupplierID, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.CompanyName, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.CompanyName, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Suppliers.CompanyName, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.ContactName, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.ContactName, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Suppliers.ContactName, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.ContactTitle, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.ContactTitle, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Suppliers.ContactTitle, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.Address, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.Address, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
-														@Html.ValidationMessageFor(model => model.Suppliers.Address, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.City, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.City, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.City, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.Region, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.Region, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.Region, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.PostalCode, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.PostalCode, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.Country, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.Country, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.Country, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.Phone, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.Phone, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.Phone, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.Fax, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.Fax, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.Fax, "", new { @class = "text-danger" })
-				
-		 </div>
-		<div class="form-group">
-				@Html.LabelFor(model => model.Suppliers.HomePage, htmlAttributes: new { @class = "col-form-label" })
-				
-										@Html.EditorFor(model => model.Suppliers.HomePage, new { htmlAttributes = new { @class = "form-control" } })
-														@Html.ValidationMessageFor(model => model.Suppliers.HomePage, "", new { @class = "text-danger" })
-				
-		 </div>
-			</div>
-
-		</div>
-		<div class="form-group">
-            <div class="row">
-				<div class="col-md-auto">
-					<input type="submit" value="Save" class="btn btn-primary" />
-				</div>
-				<div class="col-md-auto">
-					@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
-				</div>
-			</div>
-		</div>
-}
-
-</div>
-<div class="card-body border-top">
-
-    <h2>Transaction Table Section</h2>
-    <div class="page-breadcrumb">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">SUPPLIERS</a></li>
-                <li class="breadcrumb-item active" aria-current="page">PRODUCTS</li>
-            </ol>
-        </nav>
-    </div>
-    <br />
-		@using (Html.BeginForm("Edit", "Suppliers", FormMethod.Get))
-		{
-			<div class="row">
-				<div class="col-sm-3">
-					<label>Find by ProductName:</label>
-				</div>
-			</div>
-
-			<div class="input-group mb-3">
-				@Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
-                <div class="input-group-append">
-					<input type="submit" class="btn btn-primary" value="Data Search" />
-				</div>
-			</div>
-
-
-			@Html.Hidden("SupplierID", (int)ViewBag.SupplierID)
-
-<!-- ============================================================== -->
-<!-- data table  -->
-<!-- ============================================================== -->
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-<div class="card">
-    <div class="card-header">
-        <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
-        <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+    <div class="section-block" id="basicform">
+        <h3 class="section-title">Main Table Section</h3>
+        <p>Use the actions in this form to maintain the relationship and data of the database tables.</p>
     </div>
-    <div class="card-body">
+    <div class="card">
+        <h5 class="card-header">SUPPLIERS</h5>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="table-responsive">
-            <table id="example" class="table table-striped table-bordered second" style="width:100%">
-                <thead>
-					<tr>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Productid)*@
-							@Html.ActionLink("Productid", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.ProductidSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Productname)*@
-							@Html.ActionLink("Productname", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.ProductnameSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Supplierid)*@
-							@Html.ActionLink("Supplierid", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.SupplieridSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Categoryid)*@
-							@Html.ActionLink("Categoryid", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.CategoryidSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Quantityperunit)*@
-							@Html.ActionLink("Quantityperunit", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.QuantityperunitSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Unitprice)*@
-							@Html.ActionLink("Unitprice", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.UnitpriceSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Unitsinstock)*@
-							@Html.ActionLink("Unitsinstock", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.UnitsinstockSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Unitsonorder)*@
-							@Html.ActionLink("Unitsonorder", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.UnitsonorderSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Reorderlevel)*@
-							@Html.ActionLink("Reorderlevel", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.ReorderlevelSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th>
-							@*@Html.DisplayNameFor(model => model.Products.Discontinued)*@
-							@Html.ActionLink("Discontinued", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.DiscontinuedSortParm, currentFilter = ViewBag.CurrentFilter })
-						</th>
-											<th></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
-				@Html.Partial("_SuppliersProductsEditDetlMaster", Model.ProductsVwDetl)
 
-			</table>
-        
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.SupplierID, htmlAttributes: new { @class = "col-form-label" })
 
+                            @Html.EditorFor(model => model.Suppliers.SupplierID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                            @Html.HiddenFor(model => model.Suppliers.SupplierID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.SupplierID, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.CompanyName, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.CompanyName, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.CompanyName, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.ContactName, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.ContactName, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.ContactName, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.ContactTitle, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.ContactTitle, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.ContactTitle, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.Address, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.Address, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.Address, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.City, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.City, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.City, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.Region, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.Region, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.Region, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.PostalCode, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.PostalCode, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.Country, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.Country, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.Country, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.Phone, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.Phone, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.Fax, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.Fax, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.Fax, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Suppliers.HomePage, htmlAttributes: new { @class = "col-form-label" })
+
+                            @Html.EditorFor(model => model.Suppliers.HomePage, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Suppliers.HomePage, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-auto">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                        <div class="col-md-auto">
+                            @Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="card-body border-top">
+
+            <h2>Transaction Table Section</h2>
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">SUPPLIERS</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">PRODUCTS</li>
+                    </ol>
+                </nav>
+            </div>
+            <br />
+            @using (Html.BeginForm("Edit", "Suppliers", FormMethod.Get))
+            {
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Find by ProductName:</label>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-primary" value="Data Search" />
+                    </div>
+                </div>
+
+
+                @Html.Hidden("SupplierID", (int)ViewBag.SupplierID)
+
+                <!-- ============================================================== -->
+                <!-- data table  -->
+                <!-- ============================================================== -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Print, Excel, CSV, PDF Buttons</h5>
+                            <p>You can use the buttons below to export the data to external sources or change the visibility of the columns.</p>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Productid)*@
+                                                @Html.ActionLink("Productid", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.ProductidSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Productname)*@
+                                                @Html.ActionLink("Productname", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.ProductnameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Supplierid)*@
+                                                @Html.ActionLink("Supplierid", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.SupplieridSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Categoryid)*@
+                                                @Html.ActionLink("Categoryid", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.CategoryidSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Quantityperunit)*@
+                                                @Html.ActionLink("Quantityperunit", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.QuantityperunitSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Unitprice)*@
+                                                @Html.ActionLink("Unitprice", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.UnitpriceSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Unitsinstock)*@
+                                                @Html.ActionLink("Unitsinstock", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.UnitsinstockSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Unitsonorder)*@
+                                                @Html.ActionLink("Unitsonorder", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.UnitsonorderSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Reorderlevel)*@
+                                                @Html.ActionLink("Reorderlevel", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.ReorderlevelSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.Products.Discontinued)*@
+                                                @Html.ActionLink("Discontinued", "Edit", new { ViewBag.PgeSize, ViewBag.SupplierID, sortOrder = ViewBag.DiscontinuedSortParm, currentFilter = ViewBag.CurrentFilter })
+                                            </th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    @Html.Partial("_SuppliersProductsEditDetlMaster", Model.ProductsVwDetl)
+
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end data table  -->
+                    <!-- ============================================================== -->
+
+                </div>
+            }
+        </div>
     </div>
-</div>
-</div>
-<!-- ============================================================== -->
-<!-- end data table  -->
-<!-- ============================================================== -->
-
-    </div>
-		}
-</div>
-</div>
 </div>
 @section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")
 
-	}
+}

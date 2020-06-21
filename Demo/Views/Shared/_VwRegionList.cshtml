@@ -12,49 +12,49 @@
         <div class="card-body">
 
 
-    <div class="table-responsive">
-        <table id="example" class="table table-striped table-bordered second" style="width:100%">
-            <thead>
-                <tr>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.RegionID)*@
-                        @Html.ActionLink("RegionID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.RegionDescription)*@
-                        @Html.ActionLink("RegionDescription", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionDescriptionSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RegionID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RegionDescription)
-                        </td>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.RegionID)*@
+                                @Html.ActionLink("RegionID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.RegionDescription)*@
+                                @Html.ActionLink("RegionDescription", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionDescriptionSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RegionID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RegionDescription)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { RegionID = item.RegionID })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { RegionID = item.RegionID })
-                        </td>
-                        <td>
-							@Html.ActionLink("Delete", "Delete", new { RegionID = item.RegionID }, new { @class = "btn btn-danger btn-sm" })
-                        </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { RegionID = item.RegionID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { RegionID = item.RegionID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { RegionID = item.RegionID }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
 
 
 
@@ -64,6 +64,3 @@
 <!-- ============================================================== -->
 <!-- end data table  -->
 <!-- ============================================================== -->
-
-
-

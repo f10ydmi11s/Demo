@@ -13,168 +13,169 @@ namespace Demo.Controllers.Api
         // GET: api/Customercustomerdemo
         public IHttpActionResult Get()
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-            CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
-            List<BusinessModelLayer.CustomercustomerdemoSingle> customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos();
-            return Ok(customercustomerdemos);
+                    CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
+                    List<BusinessModelLayer.CustomercustomerdemoSingle> customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos();
+                    return Ok(customercustomerdemos);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // GET: api/Customercustomerdemo/?CustomerID=5
         public IHttpActionResult Get(string CustomerID)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-            CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
-            List<BusinessModelLayer.CustomercustomerdemoSingle> customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos().FindAll(x => x.CustomerID == CustomerID);
-			
-			//BusinessModelLayer.CustomercustomerdemoSingle customercustomerdemos = customercustomerdemoBusinessModelLayers.GetCustomercustomerdemoData(CustomerID);
-            return Ok(customercustomerdemos);
+                    CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
+                    List<BusinessModelLayer.CustomercustomerdemoSingle> customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos().FindAll(x => x.CustomerID == CustomerID);
+
+                    //BusinessModelLayer.CustomercustomerdemoSingle customercustomerdemos = customercustomerdemoBusinessModelLayers.GetCustomercustomerdemoData(CustomerID);
+                    return Ok(customercustomerdemos);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // GET: api/Customercustomerdemo/?CustomerID=5&CustomerTypeID=5
         public IHttpActionResult Get(string CustomerID, string CustomerTypeID)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-            CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
-            
-			BusinessModelLayer.CustomercustomerdemoSingle customercustomerdemos = new CustomercustomerdemoSingle();
+                    CustomercustomerdemoBusinessModelLayers customercustomerdemoBusinessModelLayers = new CustomercustomerdemoBusinessModelLayers();
 
-			if (CustomerTypeID == null)
-			{
-				customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos().FirstOrDefault(x => x.CustomerID == CustomerID);
-			} else
-			{			
-				customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos().FirstOrDefault(x => x.CustomerID == CustomerID && x.CustomerTypeID == CustomerTypeID);
-			}
+                    BusinessModelLayer.CustomercustomerdemoSingle customercustomerdemos = new CustomercustomerdemoSingle();
 
-			return Ok(customercustomerdemos);
+                    if (CustomerTypeID == null)
+                    {
+                        customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos().FirstOrDefault(x => x.CustomerID == CustomerID);
+                    }
+                    else
+                    {
+                        customercustomerdemos = customercustomerdemoBusinessModelLayers.GetAllCustomercustomerdemos().FirstOrDefault(x => x.CustomerID == CustomerID && x.CustomerTypeID == CustomerTypeID);
+                    }
+
+                    return Ok(customercustomerdemos);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // POST: api/Customercustomerdemo
-        public void Post([FromBody]string value)
+        public void Post([FromBody] string value)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
 
 
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // PUT: api/Customercustomerdemo/5
-        public void Put(string CustomerID, [FromBody]string value)
+        public void Put(string CustomerID, [FromBody] string value)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
 
 
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // DELETE: api/Customercustomerdemo/5
         public void Delete(string CustomerID)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
 
 
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
     }

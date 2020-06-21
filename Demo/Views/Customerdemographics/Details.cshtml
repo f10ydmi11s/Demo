@@ -27,8 +27,8 @@
 <!-- end pageheader  -->
 <!-- ============================================================== -->
 
-		<strong>API call:</strong>  <a href="~/api/Customerdemographics/?CustomerTypeID=@Model.CustomerTypeID" role="link"> api/Customerdemographics/?CustomerTypeID=@Model.CustomerTypeID &raquo;</a>
-	
+<strong>API call:</strong>  <a href="~/api/Customerdemographics/?CustomerTypeID=@Model.CustomerTypeID" role="link"> api/Customerdemographics/?CustomerTypeID=@Model.CustomerTypeID &raquo;</a>
+
 
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
     <div class="section-block" id="basicform">
@@ -38,29 +38,29 @@
     <div class="card">
         <h5 class="card-header">customerdemographics</h5>
         <div class="card-body">
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerTypeID)
-        </dt>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CustomerTypeID)
+                </dt>
 
-        <dd>
-		            @Html.DisplayFor(model => model.CustomerTypeID)
-		        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerDesc)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerTypeID)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CustomerDesc)
+                </dt>
 
-        <dd>
-		            @Html.DisplayFor(model => model.CustomerDesc)
-		        </dd>
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerDesc)
+                </dd>
+            </dl>
 
 
 
-	@Html.ActionLink("Edit", "Edit", new {  CustomerTypeID = Model.CustomerTypeID  }, new { @class = "btn btn-primary" }) 
-	
+            @Html.ActionLink("Edit", "Edit", new { CustomerTypeID = Model.CustomerTypeID }, new { @class = "btn btn-primary" })
 
-	@Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
+
+            @Html.ActionLink("Cancel", "List", new { area = "" }, new { @class = "btn btn-secondary" })
         </div>
     </div>
 </div>

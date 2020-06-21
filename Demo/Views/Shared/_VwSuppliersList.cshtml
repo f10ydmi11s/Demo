@@ -12,119 +12,119 @@
         <div class="card-body">
 
 
-    <div class="table-responsive">
-        <table id="example" class="table table-striped table-bordered second" style="width:100%">
-            <thead>
-                <tr>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.SupplierID)*@
-                        @Html.ActionLink("SupplierID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.SupplierIDSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.CompanyName)*@
-                        @Html.ActionLink("CompanyName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CompanyNameSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ContactName)*@
-                        @Html.ActionLink("ContactName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ContactNameSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.ContactTitle)*@
-                        @Html.ActionLink("ContactTitle", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ContactTitleSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Address)*@
-                        @Html.ActionLink("Address", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.AddressSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.City)*@
-                        @Html.ActionLink("City", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CitySortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Region)*@
-                        @Html.ActionLink("Region", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.PostalCode)*@
-                        @Html.ActionLink("PostalCode", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PostalCodeSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Country)*@
-                        @Html.ActionLink("Country", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CountrySortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Phone)*@
-                        @Html.ActionLink("Phone", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PhoneSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Fax)*@
-                        @Html.ActionLink("Fax", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.FaxSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.HomePage)*@
-                        @Html.ActionLink("HomePage", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.HomePageSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SupplierID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CompanyName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ContactName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ContactTitle)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Address)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.City)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Region)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PostalCode)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Country)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Phone)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Fax)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.HomePage)
-                        </td>
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.SupplierID)*@
+                                @Html.ActionLink("SupplierID", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.SupplierIDSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.CompanyName)*@
+                                @Html.ActionLink("CompanyName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CompanyNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ContactName)*@
+                                @Html.ActionLink("ContactName", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ContactNameSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.ContactTitle)*@
+                                @Html.ActionLink("ContactTitle", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.ContactTitleSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Address)*@
+                                @Html.ActionLink("Address", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.AddressSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.City)*@
+                                @Html.ActionLink("City", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CitySortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Region)*@
+                                @Html.ActionLink("Region", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.RegionSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.PostalCode)*@
+                                @Html.ActionLink("PostalCode", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PostalCodeSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Country)*@
+                                @Html.ActionLink("Country", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.CountrySortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Phone)*@
+                                @Html.ActionLink("Phone", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.PhoneSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.Fax)*@
+                                @Html.ActionLink("Fax", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.FaxSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th>
+                                @*@Html.DisplayNameFor(model => model.HomePage)*@
+                                @Html.ActionLink("HomePage", "List", new { ViewBag.PgeSize, sortOrder = ViewBag.HomePageSortParm, currentFilter = ViewBag.CurrentFilter })
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SupplierID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CompanyName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactTitle)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Region)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PostalCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Country)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Fax)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HomePage)
+                                </td>
 
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { SupplierID = item.SupplierID })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { SupplierID = item.SupplierID })
-                        </td>
-                        <td>
-							@Html.ActionLink("Delete", "Delete", new { SupplierID = item.SupplierID }, new { @class = "btn btn-danger btn-sm" })
-                        </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { SupplierID = item.SupplierID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { SupplierID = item.SupplierID })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { SupplierID = item.SupplierID }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
 
 
 
@@ -134,6 +134,3 @@
 <!-- ============================================================== -->
 <!-- end data table  -->
 <!-- ============================================================== -->
-
-
-
