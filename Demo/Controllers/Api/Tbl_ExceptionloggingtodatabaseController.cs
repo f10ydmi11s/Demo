@@ -13,133 +13,133 @@ namespace Demo.Controllers.Api
         // GET: api/Tbl_Exceptionloggingtodatabase
         public IHttpActionResult Get()
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-            Tbl_ExceptionloggingtodatabaseBusinessModelLayers tbl_exceptionloggingtodatabaseBusinessModelLayers = new Tbl_ExceptionloggingtodatabaseBusinessModelLayers();
-            List<BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle> tbl_exceptionloggingtodatabases = tbl_exceptionloggingtodatabaseBusinessModelLayers.GetAllTbl_Exceptionloggingtodatabases();
-            return Ok(tbl_exceptionloggingtodatabases);
+                    Tbl_ExceptionloggingtodatabaseBusinessModelLayers tbl_exceptionloggingtodatabaseBusinessModelLayers = new Tbl_ExceptionloggingtodatabaseBusinessModelLayers();
+                    List<BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle> tbl_exceptionloggingtodatabases = tbl_exceptionloggingtodatabaseBusinessModelLayers.GetAllTbl_Exceptionloggingtodatabases();
+                    return Ok(tbl_exceptionloggingtodatabases);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // GET: api/Tbl_Exceptionloggingtodatabase/?Logid=5
         public IHttpActionResult Get(long Logid)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
-            Tbl_ExceptionloggingtodatabaseBusinessModelLayers tbl_exceptionloggingtodatabaseBusinessModelLayers = new Tbl_ExceptionloggingtodatabaseBusinessModelLayers();
-            List<BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle> tbl_exceptionloggingtodatabases = tbl_exceptionloggingtodatabaseBusinessModelLayers.GetAllTbl_Exceptionloggingtodatabases().FindAll(x => x.Logid == Logid);
-			
-			//BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle tbl_exceptionloggingtodatabases = tbl_exceptionloggingtodatabaseBusinessModelLayers.GetTbl_ExceptionloggingtodatabaseData(Logid);
-            return Ok(tbl_exceptionloggingtodatabases);
+                    Tbl_ExceptionloggingtodatabaseBusinessModelLayers tbl_exceptionloggingtodatabaseBusinessModelLayers = new Tbl_ExceptionloggingtodatabaseBusinessModelLayers();
+                    List<BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle> tbl_exceptionloggingtodatabases = tbl_exceptionloggingtodatabaseBusinessModelLayers.GetAllTbl_Exceptionloggingtodatabases().FindAll(x => x.Logid == Logid);
+
+                    //BusinessModelLayer.Tbl_ExceptionloggingtodatabaseSingle tbl_exceptionloggingtodatabases = tbl_exceptionloggingtodatabaseBusinessModelLayers.GetTbl_ExceptionloggingtodatabaseData(Logid);
+                    return Ok(tbl_exceptionloggingtodatabases);
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
 
         // POST: api/Tbl_Exceptionloggingtodatabase
-        public void Post([FromBody]string value)
+        public void Post([FromBody] string value)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
 
 
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // PUT: api/Tbl_Exceptionloggingtodatabase/5
-        public void Put(long Logid, [FromBody]string value)
+        public void Put(long Logid, [FromBody] string value)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
 
 
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
 
         // DELETE: api/Tbl_Exceptionloggingtodatabase/5
         public void Delete(long Logid)
         {
-    try // handle exogenous exceptions
-    {  
-            try // log all exceptions
+            try // handle exogenous exceptions
             {
+                try // log all exceptions
+                {
 
 
 
 
+                }
+                catch (Exception ex)
+                {
+                    BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
+                    exlog.SendExcepToDB(ex);
+                    throw;
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                BusinessLayer.ExceptionLogging exlog = new BusinessLayer.ExceptionLogging();
-                exlog.SendExcepToDB(ex);
                 throw;
             }
-    }
-    catch(Exception) 
-    {
-        throw;
-    }
 
         }
     }
