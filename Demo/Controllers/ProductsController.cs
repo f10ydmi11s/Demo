@@ -111,15 +111,10 @@ namespace Demo.Controllers
 
                     ViewBag.CurrentSort = sortOrder;
                     ViewBag.ProductID = ProductID;
-                    List<SelectListItem> PgeSizes = new List<SelectListItem>()
-            {
-                new SelectListItem { Text = "5", Value = "5" },
-                new SelectListItem { Text = "10", Value = "10" },
-                new SelectListItem { Text = "25", Value = "25" },
-                new SelectListItem { Text = "50", Value = "50" },
-                new SelectListItem { Text = "100", Value = "100" },
 
-            };
+                    BusinessLayer.Validation pge = new BusinessLayer.Validation();
+                    List<SelectListItem> PgeSizes = pge.PageSize();
+
                     //Assigning generic list to ViewBag
                     ViewBag.PgeSizeList = PgeSizes;
 
@@ -208,15 +203,10 @@ namespace Demo.Controllers
 
                     ViewBag.CurrentSort = sortOrder;
                     ViewBag.ProductID = products.ProductID;
-                    List<SelectListItem> PgeSizes = new List<SelectListItem>()
-        {
-            new SelectListItem { Text = "5", Value = "5" },
-            new SelectListItem { Text = "10", Value = "10" },
-            new SelectListItem { Text = "25", Value = "25" },
-            new SelectListItem { Text = "50", Value = "50" },
-            new SelectListItem { Text = "100", Value = "100" },
 
-        };
+                    BusinessLayer.Validation pge = new BusinessLayer.Validation();
+                    List<SelectListItem> PgeSizes = pge.PageSize();
+
                     //Assigning generic list to ViewBag
                     ViewBag.PgeSizeList = PgeSizes;
 
@@ -392,15 +382,10 @@ namespace Demo.Controllers
 
                     ViewBag.CurrentSort = sortOrder;
                     ViewBag.ProductNameSortParm = String.IsNullOrEmpty(sortOrder) ? "ProductName_desc" : "";
-                    List<SelectListItem> PgeSizes = new List<SelectListItem>()
-                    {
-                        new SelectListItem { Text = "5", Value = "5" },
-                        new SelectListItem { Text = "10", Value = "10" },
-                        new SelectListItem { Text = "25", Value = "25" },
-                        new SelectListItem { Text = "50", Value = "50" },
-                        new SelectListItem { Text = "100", Value = "100" },
 
-                    };
+                    BusinessLayer.Validation pge = new BusinessLayer.Validation();
+                    List<SelectListItem> PgeSizes = pge.PageSize();
+
                     //Assigning generic list to ViewBag
                     ViewBag.PgeSizeList = PgeSizes;
 
