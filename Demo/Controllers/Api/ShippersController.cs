@@ -1,4 +1,5 @@
 ﻿using BusinessModelLayer;
+using Demo.CustomFilter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Demo.Controllers.Api
     public class ShippersController : ApiController
     {
         // GET: api/Shippers
+        [ExceptionHandler]
         public IHttpActionResult Get()
         {
             try // handle exogenous exceptions
@@ -37,6 +39,7 @@ namespace Demo.Controllers.Api
         }
 
         // GET: api/Shippers/?ShipperID=5
+        [ExceptionHandler]
         public IHttpActionResult Get(int ShipperID)
         {
             try // handle exogenous exceptions

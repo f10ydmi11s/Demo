@@ -8,12 +8,12 @@
 @using (Html.BeginForm("Verify", "Tbl_Login", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    <!-- ============================================================== -->
-    <!-- login page  -->
-    <!-- ============================================================== -->
-    <div class="card ">
-        <div class="card-header text-center"><a href='@Url.Action("Index","Home")'><h2 class="pageheader-title">Northwind</h2></a><span class="splash-description">Please enter your user information.</span></div>
-        <div class="card-body">
+<!-- ============================================================== -->
+<!-- login page  -->
+<!-- ============================================================== -->
+        <div class="card ">
+            <div class="card-header text-center"><a href='@Url.Action("Index","Home")'><h2 class="pageheader-title"><b>North</b>wind</h2></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-body">
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">

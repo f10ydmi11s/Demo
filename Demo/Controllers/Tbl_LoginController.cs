@@ -1,5 +1,6 @@
 ﻿
 using BusinessModelLayer;
+using Demo.CustomFilter;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace Demo.Controllers
             return View();
         }
 
+
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Login()
         {
@@ -70,6 +73,7 @@ namespace Demo.Controllers
             }
         }
 
+        [ExceptionHandler]
         [HttpPost]
         public ActionResult Verify(string Username, string Password)
         {
@@ -108,6 +112,7 @@ namespace Demo.Controllers
         }
 
 
+        [ExceptionHandler]
         [HttpGet]
         [ActionName("Create")]
         public ActionResult Create_Get()
@@ -132,6 +137,7 @@ namespace Demo.Controllers
             }
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Create")]
         public ActionResult Create_Post()
@@ -172,6 +178,7 @@ namespace Demo.Controllers
         }
 
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Edit(string Username)
         {
@@ -202,6 +209,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Edit")]
         public ActionResult Edit_Post(string Username)
@@ -240,6 +248,8 @@ namespace Demo.Controllers
             }
 
         }
+
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Delete(string Username)
         {
@@ -270,6 +280,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult Delete_Post(string Username)
@@ -302,6 +313,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Details(string Username)
         {

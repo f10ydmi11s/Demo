@@ -1,5 +1,6 @@
 ﻿
 using BusinessModelLayer;
+using Demo.CustomFilter;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Demo.Controllers
 
 
 
+        [ExceptionHandler]
         [HttpGet]
         [ActionName("Create")]
         public ActionResult Create_Get()
@@ -53,6 +55,7 @@ namespace Demo.Controllers
             }
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Create")]
         public ActionResult Create_Post()
@@ -99,6 +102,7 @@ namespace Demo.Controllers
         }
 
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Edit(int OrderID, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
         {
@@ -190,6 +194,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Edit")]
         public ActionResult Edit_Post(OrdersSingle orders, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
@@ -277,6 +282,8 @@ namespace Demo.Controllers
 
         }
 
+
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Delete(int OrderID)
         {
@@ -313,6 +320,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult Delete_Post(int OrderID)
@@ -345,6 +353,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Details(int OrderID)
         {

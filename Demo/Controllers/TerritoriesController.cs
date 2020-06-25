@@ -1,5 +1,6 @@
 ﻿
 using BusinessModelLayer;
+using Demo.CustomFilter;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Demo.Controllers
 
 
 
+        [ExceptionHandler]
         [HttpGet]
         [ActionName("Create")]
         public ActionResult Create_Get()
@@ -49,6 +51,7 @@ namespace Demo.Controllers
             }
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Create")]
         public ActionResult Create_Post()
@@ -91,6 +94,7 @@ namespace Demo.Controllers
         }
 
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Edit(string TerritoryID, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
         {
@@ -178,6 +182,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Edit")]
         public ActionResult Edit_Post(TerritoriesSingle territories, string sortOrder, string currentFilter, string searchString, int? page, string PgeSize)
@@ -265,6 +270,8 @@ namespace Demo.Controllers
 
         }
 
+
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Delete(string TerritoryID)
         {
@@ -297,6 +304,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult Delete_Post(string TerritoryID)
@@ -329,6 +337,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Details(string TerritoryID)
         {

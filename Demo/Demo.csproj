@@ -192,6 +192,7 @@
     <Compile Include="Controllers\Tbl_ExceptionloggingtodatabaseController.cs" />
     <Compile Include="Controllers\Tbl_LoginController.cs" />
     <Compile Include="Controllers\TerritoriesController.cs" />
+    <Compile Include="CustomFilter\ExceptionHandlerAttribute.cs" />
     <Compile Include="CustomHelpers\CustomHelpers.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using BusinessModelLayer;
+using Demo.CustomFilter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Demo.Controllers.Api
     public class Tbl_ExceptionloggingtodatabaseController : ApiController
     {
         // GET: api/Tbl_Exceptionloggingtodatabase
+        [ExceptionHandler]
         public IHttpActionResult Get()
         {
             try // handle exogenous exceptions
@@ -37,6 +39,7 @@ namespace Demo.Controllers.Api
         }
 
         // GET: api/Tbl_Exceptionloggingtodatabase/?Logid=5
+        [ExceptionHandler]
         public IHttpActionResult Get(long Logid)
         {
             try // handle exogenous exceptions

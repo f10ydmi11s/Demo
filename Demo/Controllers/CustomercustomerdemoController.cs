@@ -1,5 +1,6 @@
 ﻿
 using BusinessModelLayer;
+using Demo.CustomFilter;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Demo.Controllers
 
 
 
+        [ExceptionHandler]
         [HttpGet]
         [ActionName("Create")]
         public ActionResult Create_Get()
@@ -51,6 +53,7 @@ namespace Demo.Controllers
             }
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Create")]
         public ActionResult Create_Post()
@@ -95,6 +98,7 @@ namespace Demo.Controllers
         }
 
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Edit(string CustomerID, string CustomerTypeID)
         {
@@ -137,6 +141,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Edit")]
         public ActionResult Edit_Post(string CustomerID, string CustomerTypeID)
@@ -183,6 +188,8 @@ namespace Demo.Controllers
             }
 
         }
+
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Delete(string CustomerID, string CustomerTypeID)
         {
@@ -225,6 +232,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult Delete_Post(string CustomerID, string CustomerTypeID)
@@ -265,6 +273,7 @@ namespace Demo.Controllers
 
         }
 
+        [ExceptionHandler]
         [HttpGet]
         public ActionResult Details(string CustomerID, string CustomerTypeID)
         {
